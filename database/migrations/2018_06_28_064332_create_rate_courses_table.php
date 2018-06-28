@@ -15,6 +15,8 @@ class CreateRateCoursesTable extends Migration
     {
         Schema::create('rate_courses', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('content');
+            $table->integer('courses_id')->unsigned();
             $table->timestamps();
         });
     }

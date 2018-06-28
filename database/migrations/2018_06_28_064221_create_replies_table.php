@@ -15,6 +15,9 @@ class CreateRepliesTable extends Migration
     {
         Schema::create('replies', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('content');
+            $table->integer('comment_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
     }
