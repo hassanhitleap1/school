@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\User;
 
 class Admin
 {
@@ -15,6 +16,10 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if (Auth::user() && Auth::user()->admin == User::ADMIN or Auth::user()->admin == User::SUPER_ADMIN) {
+            return $next($request);
+        }
+
+        return redirect('/admin/auth/login');
     }
 }
