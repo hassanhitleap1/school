@@ -7,6 +7,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    const  SUPER_ADMIN=0;
+    const ADMIN=1;
+    const TEACHER=2;
+    const STUDENT=3;
+    const ACTIVE=1;
+    const DISACTIVE=0;
     use Notifiable;
 
     /**
@@ -26,4 +32,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
 }
