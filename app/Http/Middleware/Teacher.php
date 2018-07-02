@@ -4,7 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use App\User;
-class Admin
+
+class Teacher
 {
     /**
      * Handle an incoming request.
@@ -15,10 +16,10 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user() &&  Auth::user()->type == User::ADMIN ) {
+        if (Auth::user() &&  Auth::user()->type == User::TEACHER ) {
             return $next($request);
         }
 
-        return redirect('/admin');
+        return redirect('/teacher');
     }
 }
