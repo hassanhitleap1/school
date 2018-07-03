@@ -18,8 +18,10 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->enum('block',[\App\User::UNBLOCK, \App\User::BLOCK])->default(\App\User::UNBLOCK); // 0 unblock 1 block
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

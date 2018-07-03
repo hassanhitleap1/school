@@ -8,6 +8,10 @@ use App\Http\Controllers\Controller;
 class TeacherController extends Controller
 {
 
+    public function index(){
+        return view('teacher.index');
+    }
+
     public function login(){
         return view('teacher.auth.login');
     }
@@ -15,4 +19,6 @@ class TeacherController extends Controller
     public function register(){
         return view('teacher.auth.register');
     }
+
+
 }

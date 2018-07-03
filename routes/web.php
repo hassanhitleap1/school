@@ -27,4 +27,7 @@ Route::get('/admin/go','Admin\AdminController@go');
 // teacher route
 Route::get('/teacher/login','Teacher\TeacherController@login');
 Route::get('/teacher/register','Teacher\TeacherController@register');
+Route::get('/teacher','Teacher\TeacherController@index');
+
+
 
