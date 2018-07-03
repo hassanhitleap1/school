@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin','Admin\AdminController@index');
 Route::get('/admin/login','Admin\AdminController@login');
 Route::get('/admin/register','Admin\AdminController@register');
-Route::get('/admin/go','Admin\AdminController@go');
+
 
 Route::resource('/admin/students','Admin\StudentController');
 
