@@ -910,14 +910,14 @@
     </section>
 
 
-    <script src="{{asset('AdminTheme/plugins/jQuery/jquery-2.2.3.min.js"')}}"></script>
+    <script src="{{asset('AdminTheme/plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
     <!-- Bootstrap 3.3.6 -->
-    <script src="{{asset('AdminTheme/bootstrap/js/bootstrap.min.js"')}}"></script>
+    <script src="{{asset('AdminTheme/bootstrap/js/bootstrap.min.js')}}"></script>
     <!-- DataTables -->
-    <script src="{{asset('AdminTheme/plugins/datatables/jquery.dataTables.min.js"')}}"></script>
+    <script src="{{asset('AdminTheme/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('AdminTheme/plugins/datatables/dataTables.bootstrap.min.js')}}"></script>
     <!-- SlimScroll -->
-    <script src="{{asset('AdminTheme/slimScroll/jquery.slimscroll.min.js')}}"></script>
+    <script src="{{asset('AdminTheme/plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
     <!-- FastClick -->
     <script src="{{asset('AdminTheme/plugins/fastclick/fastclick.js')}}"></script>
     <!-- AdminLTE App -->
@@ -937,5 +937,6 @@
                 "autoWidth": false
             });
         });
+    </script>
 
 @endsection
