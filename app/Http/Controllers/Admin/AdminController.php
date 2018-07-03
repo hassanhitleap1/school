@@ -13,6 +13,9 @@ class AdminController extends Controller
         //$this->middleware(Admin::class);
 
     }
+    public function  index(){
+        return view('admin.index');
+    }
     public function login(){
         return view('admin.auth.login');
     }

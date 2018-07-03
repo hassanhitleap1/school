@@ -20,9 +20,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // admin route
+Route::get('/admin','Admin\AdminController@index');
 Route::get('/admin/login','Admin\AdminController@login');
 Route::get('/admin/register','Admin\AdminController@register');
 Route::get('/admin/go','Admin\AdminController@go');
+
+Route::resource('/admin/students','Admin\StudentController');
+
 
 // teacher route
 Route::get('/teacher/login','Teacher\TeacherController@login');
