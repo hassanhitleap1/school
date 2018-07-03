@@ -925,18 +925,18 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{asset('AdminTheme/dist/js/demo.js')}}"></script>
     <!-- page script -->
-    <script>
-        $(function () {
-            $("#example1").DataTable();
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false
-            });
-        });
-    </script>
+    {{--<script>--}}
+        {{--$(function () {--}}
+            {{--$("#example1").DataTable();--}}
+            {{--$('#example2').DataTable({--}}
+                {{--"paging": true,--}}
+                {{--"lengthChange": false,--}}
+                {{--"searching": false,--}}
+                {{--"ordering": true,--}}
+                {{--"info": true,--}}
+                {{--"autoWidth": false--}}
+            {{--});--}}
+        {{--});--}}
+    {{--</script>--}}
 
 @endsection
