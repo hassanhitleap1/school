@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(Admin::class);
+        //$this->middleware(Admin::class);
 
     }
     public function login(){
