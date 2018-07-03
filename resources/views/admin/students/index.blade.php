@@ -52,7 +52,8 @@
                                 <td>{{$student->created_at}}</td>
                                 <td>ips</td>
                                 <td>
-                                    <span class="fa fa-minus-circle">block<span>
+                                    <span class="fa fa-fw fa-minus-circle">block<span>
+                                    <span class="fa fa-fw fa-check">unblock</span>   
                                 </td>
 
                             </tr>
