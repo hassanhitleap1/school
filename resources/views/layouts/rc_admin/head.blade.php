@@ -4,6 +4,10 @@
     <title>SCHOOL - @yield('title')</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="{{asset('AdminTheme/bootstrap/css/bootstrap.min.css')}}">
     <!-- Font Awesome -->
@@ -33,5 +37,6 @@
     <!--[if lt IE 9]>
     <script src="{{ asset('https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js')}}"></script>
     <script src="{{ asset('https://oss.maxcdn.com/respond/1.4.2/respond.min.js')}}"></script>
+
     <![endif]-->
 </head>

@@ -26,6 +26,7 @@ Route::get('/admin/register','Admin\AdminController@register');
 
 
 Route::resource('/admin/students','Admin\StudentController');
+Route::resource('/admin/levels','Admin\LevelController');
 
 
 // teacher route
