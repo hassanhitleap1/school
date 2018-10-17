@@ -45,8 +45,12 @@
                                     <td>{{$level->name_ar}}</td>
                                     <td>{{$level->order}}</td>
                                     <td>
-                                        <a href=""> <i class="fa fa-fw fa-trash"></i> Delete</a>
-                                        <a href=""><i class="fa fa-fw fa-pencil"></i> Update</a>
+                                        
+                                        <form action="{{url('/admin/levels/'.$level->id)}}" method="post">
+                                            {{ method_field('delete') }}
+                                            <i class="fa fa-fw fa-pencil"></i>Delete
+                                        </form>
+                                        <a href="{{url('/admin/levels/'.$level->id.'/edit')}}"><i class="fa fa-fw fa-pencil"></i>Edit</a>
 
                                     </td>
                                 </tr>

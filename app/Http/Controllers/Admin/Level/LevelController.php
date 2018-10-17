@@ -73,9 +73,9 @@ class LevelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Level $level)
     {
-        //
+        return view('admin.levels.edit')->with('level',$level);
     }
 
     /**
@@ -85,9 +85,17 @@ class LevelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Level $level)
     {
-        //
+        $rules=[
+            'order'=>'integer',
+        ];
+        $this->validate($request, $rules);
+        $level->name_en=$request->name_en;
+        $level->name_ar=$request->name_ar;
+        $level->order=$request->order;
+        $level->save();
+        return redirect('/admin/levels');
     }
 
     /**
@@ -96,8 +104,9 @@ class LevelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Level $level)
     {
-        //
+        $level->delete();
+        return redirect('/admin/levels');
     }
 }

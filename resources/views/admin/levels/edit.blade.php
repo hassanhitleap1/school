@@ -35,23 +35,25 @@
                     <!-- form start -->
                     <form role="form" action="{{url('admin/levels/'.$level->id.'/edit')}}" method="POST">
                         @csrf
+
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="name_en">Name in English</label>
-                                <input type="text" class="form-control" id="name_en" placeholder="Enter Name English" name="name_en" value="{{ old('name_en') }}">
+                                <input type="text" class="form-control" id="name_en" placeholder="Enter Name English" name="name_en" value="{{$level->name_en}}">
                             </div>
                             <div class="form-group">
                                 <label for="name_ar">Name in Arabic</label>
-                                <input type="text" class="form-control" id="name_ar" placeholder="Name in Arabic" name="name_ar" value="{{ old('name_ar') }}">
+                                <input type="text" class="form-control" id="name_ar" placeholder="Name in Arabic" name="name_ar" value="{{$level->name_ar}}">
                             </div>
                             <div class="form-group">
                                 <label for="name_ar">Order Level</label>
-                                <input type="text" class="form-control" id="order" placeholder="Order Level" name="order" value="{{ old('order') }}">
+                                <input type="text" class="form-control" id="order" placeholder="Order Level" name="order" value="{{$level->order}}">
                             </div>
                         </div>
                         <!-- /.box-body -->
 
                         <div class="box-footer">
+                            <input name="_method" type="hidden" value="PUT">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
