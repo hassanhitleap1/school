@@ -46,9 +46,11 @@
                                     <td>{{$level->order}}</td>
                                     <td>
                                         
-                                        <form action="{{url('/admin/levels/'.$level->id)}}" method="post">
-                                            {{ method_field('delete') }}
-                                            <i class="fa fa-fw fa-pencil"></i>Delete
+                                        <form id="trash-form" action="{{url('/admin/levels/'.$level->id)}}" method="POST">
+                                            <a><i class="fa fa-fw fa-trash"  onclick="event.preventDefault();
+                                                     document.getElementById('trash-form').submit();"></i>Delete</a>
+                                                     <input type="hidden" name="_method" value="DELETE" />
+                                                     @csrf
                                         </form>
                                         <a href="{{url('/admin/levels/'.$level->id.'/edit')}}"><i class="fa fa-fw fa-pencil"></i>Edit</a>
 

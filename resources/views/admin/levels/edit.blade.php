@@ -33,9 +33,9 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{url('admin/levels/'.$level->id.'/edit')}}" method="POST">
+                    <form role="form" action="{{url('admin/levels/'.$level->id)}}" method="POST">
                         @csrf
-
+                        <input type="hidden" name="_method" value="put" />
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="name_en">Name in English</label>
