@@ -4,7 +4,7 @@
 
     <section class="content-header">
         <h1>
-            Data Tables
+            Data levels
             <small>advanced tables</small>
         </h1>
         <ol class="breadcrumb">
@@ -17,8 +17,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-                <button type="button"  id="myBtn" >Launch modal</button>
-                <button class="btn btn-primary btn-lg" id="create_level" >Create </button>
+                <a href="{{asset('/admin/levels/create')}}" class="btn btn-primary btn-lg" id="create_level" >Create </a>
             </div>
         </div>
         <div class="row">
@@ -64,15 +63,4 @@
         </div>
         <!-- /.row -->
     </section>
-
-    <script type="application/javascript">
-        $(document).ready(function(){
-            $("#myBtn").click(function(){
-                console.log('aaaaa');
-                $('#myModal').load("http://localhost:8000/admin/levels/create");
-                $('#myModal').modal('toggle');
-            });
-        });
-    </script>
-    <div class="modal fade" id="myModal" role="dialog"></div>
 @endsection

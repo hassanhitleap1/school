@@ -6,8 +6,9 @@
 
 
 
+@extends('admin.layouts.admin-layouts')
 @section('content')
 
-home admin
+hsadasd
 
 @endsection
