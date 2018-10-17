@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('admin.layouts.admin-layouts')
 @section('title', 'levels')
 @section('content')
 
@@ -45,7 +45,6 @@
                                     <td>{{$level->name_ar}}</td>
                                     <td>{{$level->order}}</td>
                                     <td>
-
                                         <a href=""> <i class="fa fa-fw fa-trash"></i> Delete</a>
                                         <a href=""><i class="fa fa-fw fa-pencil"></i> Update</a>
 

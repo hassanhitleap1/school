@@ -33,7 +33,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{url('/admin/levels')}}" method="POST">
+                    <form role="form" action="{{url('admin/levels/'.$level->id.'/edit')}}" method="POST">
                         @csrf
                         <div class="box-body">
                             <div class="form-group">
