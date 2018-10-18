@@ -26,8 +26,9 @@
        <ul class="sidebar-menu">
             <li><a href="{{asset('/admin/levels')}}"><i class="fa fa-book"></i> <span>levels</span></a></li>
           <li><a href="{{asset('/admin/materials')}}"><i class="fa fa-book"></i> <span>materials</span></a></li>
-          <li><a href="{{asset('')}}"><i class="fa fa-book"></i> <span>teachers</span></a></li>
-          <li><a href="{{asset('')}}"><i class="fa fa-book"></i> <span>students</span></a></li>
+          <li><a href="{{asset('/admin/admins')}}"><i class="fa fa-book"></i> <span>admins</span></a></li>
+          <li><a href="{{asset('/admin/teachers')}}"><i class="fa fa-book"></i> <span>teachers</span></a></li>
+          <li><a href="{{asset('/admin/students')}}"><i class="fa fa-book"></i> <span>students</span></a></li>
 
        </ul>
     </section>

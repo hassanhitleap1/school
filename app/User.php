@@ -18,8 +18,10 @@ class User extends Authenticatable
     const STUDENT=3;
     const ACTIVE=1;
     const DISACTIVE=0;
-    const BLOCK=1;
-    const UNBLOCK=0;
+    const BLOCK="1";
+    const UNBLOCK="0";
+
+    protected $table='users';
 
     /**
      * The attributes that are mass assignable.
