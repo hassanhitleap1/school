@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin','Admin\AdminController@index');
 Route::get('/admin/login','Admin\AdminController@login');
 Route::get('/admin/register','Admin\AdminController@register');
-Route::get('/teacher','Teacher\TeacherController@index');
+
 
 
 Route::resource('/admin/students','Admin\StudentController');
@@ -50,7 +50,13 @@ Route::get('/admin/students/{id}/unblock','Admin\Student\StudentController@unblo
 // teacher route
 Route::get('/teacher/login','Teacher\TeacherController@login');
 Route::get('/teacher/register','Teacher\TeacherController@register');
+Route::get('/teacher','Teacher\TeacherController@index');
 
 
+// route courses for teacher
+
+Route::prefix('/teacher')->group(function () {
+    Route::resource('/courses','Teacher\Courses\CoursesController');
+});
 
 

@@ -24,11 +24,8 @@
        <!-- /.search form -->
        <!-- sidebar menu: : style can be found in sidebar.less -->
        <ul class="sidebar-menu">
-            <li><a href="{{asset('/admin/levels')}}"><i class="fa fa-book"></i> <span>levels</span></a></li>
-          <li><a href="{{asset('/admin/materials')}}"><i class="fa fa-book"></i> <span>materials</span></a></li>
-          <li><a href="{{asset('/admin/admins')}}"><i class="fa fa-book"></i> <span>admins</span></a></li>
-          <li><a href="{{asset('/admin/teachers')}}"><i class="fa fa-book"></i> <span>teachers</span></a></li>
-          <li><a href="{{asset('/admin/students')}}"><i class="fa fa-book"></i> <span>students</span></a></li>
+            <li><a href="{{asset('/teacher/courses')}}"><i class="fa fa-book"></i> <span>my courses</span></a></li>
+          <li><a href="{{asset('/teacher/students')}}"><i class="fa fa-book"></i> <span>my student</span></a></li>
 
        </ul>
     </section>
