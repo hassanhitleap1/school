@@ -16,7 +16,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-                <a href="{{url('/teacher/courses/create')}}" class="btn btn-primary btn-lg" >Create </a>
+                <a href="{{url('teacher/courses/'.$id.'/units/create')}}" class="btn btn-primary btn-lg" >Create </a>
             </div>
         </div>
         <div class="row">
@@ -36,22 +36,22 @@
                             </tr>
                             </thead>
                             <tbody>
-                             @foreach($courses as $course)
-                                <tr>
-                                    <td>{{$course->name}}</td>
-                                    <td>{{$course->description}}</td>
-                                    <td>
-                                        <form id="trash-form" action="{{url('/teacher/courses/'.$course->id)}}" method="POST">
-                                            <a><i class="fa fa-fw fa-trash"  onclick="event.preventDefault();document.getElementById('trash-form').submit();"></i>Delete
-                                            </a>
-                                            <input type="hidden" name="_method" value="DELETE" />
-                                                @csrf
-                                        </form>
-                                        <a href="{{url('/teacher/courses/'.$course->id.'/edit')}}"><i class="fa fa-fw fa-pencil"></i>Edit</a>
-                                        <a href="{{url('/teacher/courses/'.$course->id.'/units')}}"><i class="fa fa-fw  fa-book"></i>Units</a>
-                                    </td>
-                                </tr>
-                             @endforeach
+                                    @foreach($units as $unit)
+                                    <tr>
+                                        <td>{{$unit->name}}</td>
+                                        <td>{{$unit->description}}</td>
+                                        <td>
+                                            <form id="trash-form" action="{{url('/teacher/courses/'.$id.'/units/'.$unit->id)}}" method="POST">
+                                                <a><i class="fa fa-fw fa-trash"  onclick="event.preventDefault();document.getElementById('trash-form').submit();"></i>Delete
+                                                </a>
+                                                <input type="hidden" name="_method" value="DELETE" />
+                                                    @csrf
+                                            </form>
+                                            <a href="{{url('/teacher/courses/'.$id.'/units/'.$unit->id.'/edit')}}"><i class="fa fa-fw fa-pencil"></i>Edit</a>
+                                            <a href="{{url('/teacher/courses/'.$unit->id.'/lessons')}}"><i class="fa fa-fw  fa-book"></i>Lessons</a>
+                                        </td>
+                                    </tr>
+                                 @endforeach
                             </tbody>
                         </table>
                     </div>
