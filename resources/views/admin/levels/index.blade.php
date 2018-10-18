@@ -17,7 +17,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-                <a href="{{asset('/admin/levels/create')}}" class="btn btn-primary btn-lg" id="create_level" >Create </a>
+                <a href="{{url('/admin/levels/create')}}" class="btn btn-primary btn-lg" id="create_level" >Create </a>
             </div>
         </div>
         <div class="row">

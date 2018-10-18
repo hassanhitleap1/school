@@ -1,5 +1,5 @@
 @extends('admin.layouts.admin-layouts')
-@section('title', 'students')
+@section('title', 'create admins')
 @section('content')
 
     <link rel="stylesheet" href="{{ asset('AdminTheme/plugins/datatables/dataTables.bootstrap.css')}}">
@@ -16,10 +16,13 @@
         </ol>
     </section>
     <section class="content">
+            <div class="row">
+                    <div class="col-md-12">
+                        <a href="{{url('/admin/admins/create')}}" class="btn btn-primary btn-lg"  >Create </a>
+                    </div>
+                </div>
         <div class="row">
             <div class="col-xs-12">
-
-
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Data Table With Full Features</h3>
@@ -38,19 +41,19 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($students as $student)
+                            @foreach($admins as $admin)
                             <tr>
-                                <td>{{$student->name}}</td>
-                                <td>{{$student->email}}</td>
-                                <td>{{($student->block)?'Blocked':'Unblock'}}</td>
-                                <td>{{$student->created_at}}</td>
+                                <td>{{$admin->name}}</td>
+                                <td>{{$admin->email}}</td>
+                                <td>{{($admin->block)?'Blocked':'Unblock'}}</td>
+                                <td>{{$admin->created_at}}</td>
                                 <td>ips</td>
                                 <td>
-                                    <li><a href="{{url('/admin/students/'.$student->id.'/block')}}">
+                                    <li><a href="{{url('/admin/teachers/'.$admin->id.'/block')}}">
                                         <span class="fa fa-fw fa-minus-circle"><span>
                                                 block
                                     </a></li>
-                                    <li><a href="{{url('/admin/students/'.$student->id.'/unblock')}}">
+                                    <li><a href="{{url('/admin/teachers/'.$admin->id.'/unblock')}}">
                                         <span class="fa fa-fw fa-check"></span>
                                         unblock
                                     </a></li>
