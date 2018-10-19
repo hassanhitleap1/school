@@ -51,4 +51,42 @@ class CoursesUnitController extends Controller
         $model->save();
         return redirect('/teacher/courses/'.$id.'/units');
     }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id,Unit $unit)
+    {
+        return view('teacher.courses.units.edit')->withId($id)->with('unit', $unit);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update($id,Request $request, Unit $unit)
+    {
+        $unit->name = $request->name;
+        $unit->description = $request->description;
+        $unit->time = 1.5;
+        $unit->save();
+        return redirect('/teacher/courses/' . $id . '/units');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id,Unit $unit)
+    {
+        $unit->delete();
+        return redirect('/teacher/courses/' . $id . '/units');
+    }
 }
