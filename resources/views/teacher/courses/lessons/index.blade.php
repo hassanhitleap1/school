@@ -36,11 +36,11 @@
                             </tr>
                             </thead>
                             <tbody>
-                              <!-- @foreach($lessons as $lesson)
+                              @foreach($lessons as $lesson)
                                 <tr>
-                                    <td>{{$course->name}}</td>
-                                    <td>{{$course->description}}</td>
-                                    <td>{{$course->content}}</td>
+                                    <td>{{$lesson->name}}</td>
+                                    <td>{{$lesson->description}}</td>
+                                    <td>{{$lesson->content}}</td>
                                     <td>
                                         <form id="trash-form" action="{{url('/teacher/courses/'.$idCourse.'/units/'.$idUnit.'/lessons/'.$lesson->id)}}" method="POST">
                                             <a><i class="fa fa-fw fa-trash"  onclick="event.preventDefault();document.getElementById('trash-form').submit();"></i>Delete
@@ -48,10 +48,10 @@
                                             <input type="hidden" name="_method" value="DELETE" />
                                                 @csrf
                                         </form>
-                                        <a href="{{url('/teacher/courses/'.$idCourse.'/units/'.$idUnit.'/lessons/'.$idUnit.'/lessons/'.$lesson->id.'/edit')}}"><i class="fa fa-fw fa-pencil"></i>Edit</a>
+                                        <a href="{{url('/teacher/courses/'.$idCourse.'/units/'.$idUnit.'/lessons/'.$lesson->id.'/edit')}}"><i class="fa fa-fw fa-pencil"></i>Edit</a>
                                     </td>
                                 </tr>
-                             @endforeach -->
+                             @endforeach
                             </tbody>
                         </table>
                     </div>

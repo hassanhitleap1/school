@@ -13,10 +13,11 @@ class CoursesUnitLessonController extends Controller
      * Display a listing of the resource.
      * @return \Illuminate\Http\Response
      */
-    public function index($idCourse, Unit $unit)
+    public function index($idCourse, $idUnit)
     {
+        $unit= Unit::find($idUnit);
         $lessons= $unit->lessons;
-        return view('teacher.courses.lessons.index')->withIdCourse($idCourse)->withIdUnit($unit->id)->withLessons($lessons);
+        return view('teacher.courses.lessons.index')->withIdCourse($idCourse)->withIdUnit($idUnit)->withLessons($lessons);
     }
 
     /**
@@ -47,6 +48,7 @@ class CoursesUnitLessonController extends Controller
         $model->name = $request->name;
         $model->description = $request->description;
         $model->content = $request->content;
+        $model->time = 1.00;
         $model->unit_id= $idUnit;
         $model->save();
         return redirect('/teacher/courses/' . $idCourse . '/units/' . $idUnit . '/lessons/');
@@ -69,9 +71,10 @@ class CoursesUnitLessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idCourse,$idUnit,$id)
     {
-        //
+        $lesson=Lessons::find($id);
+        return view('teacher.courses.lessons.edit')->withIdCourse($idCourse)->withIdUnit($idUnit)->withLesson($lesson);
     }
 
     /**
@@ -81,9 +84,13 @@ class CoursesUnitLessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idCourse, $idUnit, Lessons $lesson)
     {
-        //
+        $lesson->name = $request->name;
+        $lesson->description = $request->description;
+        $lesson->content = $request->content;
+        $lesson->save();
+        return redirect('/teacher/courses/' . $idCourse . '/units/' . $idUnit . '/lessons/');
     }
 
     /**
@@ -92,8 +99,9 @@ class CoursesUnitLessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($idCourse, $idUnit, Lessons $lesson)
     {
-        //
+        $lesson->delete();
+        return redirect('/teacher/courses/' . $idCourse . '/units/' . $idUnit . '/lessons/');
     }
 }

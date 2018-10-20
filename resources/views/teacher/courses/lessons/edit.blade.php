@@ -33,7 +33,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{url('/teacher/courses/'.$idCourse.'/units/'.$idUnit.'/lessons/'.$idUnit.'/lessons/'.$lesson->id)}}" method="POST">
+                    <form role="form" action="{{url('/teacher/courses/'.$idCourse.'/units/'.$idUnit.'/lessons/'.$lesson->id)}}" method="POST">
                         @csrf
                          <input type="hidden" name="_method" value="put" />
                         <div class="box-body">
