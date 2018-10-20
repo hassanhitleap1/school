@@ -58,6 +58,7 @@ Route::get('/teacher','Teacher\TeacherController@index');
 Route::prefix('/teacher')->group(function () {
     Route::resource('/courses','Teacher\Courses\CoursesController');
     Route::resource('/courses/{id}/units','Teacher\Courses\CoursesUnitController');
+    Route::resource('/courses/{courseId}/units/{unitId}/lessons', 'Teacher\Courses\CoursesUnitLessonController');
 });
 
 
