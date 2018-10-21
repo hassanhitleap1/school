@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Unit;
 use App\Model\Lessons;
+use Illuminate\Support\Facades\Request as RequstIlumninate;
+use File;
+use Illuminate\Support\Facades\Storage;
 
 class CoursesUnitLessonController extends Controller
 {
@@ -45,23 +48,20 @@ class CoursesUnitLessonController extends Controller
         ];
         $model = new Lessons;
         $this->validate($request, $rules);
-        if ($request->hasFile('vedio')) {
-            if($request->file('vedio')->isValid()) {
-                try {
-                    $vedio = Request::file('vedio');
-                    $name = md5(uniqid(rand(), true)).'.'.$vedio->getClientOriginalExtension();
-                    $path='vedio/vedio-user-1/course-'.$idCourse;
-                    if(! File::isDirectory($path)){
-                        Storage::makeDirectory($path);
-                    }
-                    $vedio->move($path,$name);
-                    $model->vedio_path=$path.$name;
-                } catch (Illuminate\Filesystem\FileNotFoundException $e) {
-                    var_dump($e->getMessage()) ;
+        if ($request->hasFile('file')) {
+            try {
+                $vedio = RequstIlumninate::file('file');
+                $name = md5(uniqid(rand(), true)).'.'.$vedio->getClientOriginalExtension();
+                $path='vedio/vedio-user-1/course-'.$idCourse;
+                if(! File::isDirectory($path)){
+                    Storage::makeDirectory($path);
                 }
-            } 
+                $vedio->move($path,$name);
+                $model->path_vedio=$path.$name;
+            } catch (Illuminate\Filesystem\FileNotFoundException $e) {
+                var_dump($e->getMessage()) ;
+            }
         }
-       
         $model->name = $request->name;
         $model->description = $request->description;
         $model->content = $request->content;
