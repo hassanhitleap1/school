@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\CoursesHelpers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\UnitsHelper;
+use App\Model\LessonsHelper;
 
 class CoursesHelperUnitLessonController extends Controller
 {
@@ -13,9 +15,9 @@ class CoursesHelperUnitLessonController extends Controller
      */
     public function index($idCourse, $idUnit)
     {
-        $unit= Unit::find($idUnit);
+        $unit= UnitsHelper::find($idUnit);
         $lessons= $unit->lessons;
-        return view('teacher.courses.lessons.index')->withIdCourse($idCourse)->withIdUnit($idUnit)->withLessons($lessons);
+        return view('admin.courses_helpers.lessons.index')->withIdCourse($idCourse)->withIdUnit($idUnit)->withLessons($lessons);
     }
 
     /**
@@ -25,9 +27,9 @@ class CoursesHelperUnitLessonController extends Controller
      */
     public function create($idCourse,  $idUnit)
     {
-        return view('teacher.courses.lessons.create')->withIdCourse($idCourse)->withIdUnit($idUnit);
+        return view('admin.courses_helpers.lessons.create')->withIdCourse($idCourse)->withIdUnit($idUnit);
     }
-
+   
     /**
      * Store a newly created resource in storage.
      *
@@ -42,14 +44,14 @@ class CoursesHelperUnitLessonController extends Controller
             'content'=> 'required',
         ];
         $this->validate($request, $rules);
-        $model = new Lessons;
+        $model = new LessonsHelper;
         $model->name = $request->name;
         $model->description = $request->description;
         $model->content = $request->content;
         $model->time = 1.00;
-        $model->unit_id= $idUnit;
+        $model->unit_helper_id= $idUnit;
         $model->save();
-        return redirect('/teacher/courses/' . $idCourse . '/units/' . $idUnit . '/lessons/');
+        return redirect('/admin/courses_helpers/' . $idCourse . '/units/' . $idUnit . '/lessons/');
     }
 
     /**
@@ -71,8 +73,8 @@ class CoursesHelperUnitLessonController extends Controller
      */
     public function edit($idCourse,$idUnit,$id)
     {
-        $lesson=Lessons::find($id);
-        return view('teacher.courses.lessons.edit')->withIdCourse($idCourse)->withIdUnit($idUnit)->withLesson($lesson);
+        $lesson=LessonsHelper::find($id);
+        return view('admin.courses_helpers.lessons.edit')->withIdCourse($idCourse)->withIdUnit($idUnit)->withLesson($lesson);
     }
 
     /**
@@ -82,13 +84,13 @@ class CoursesHelperUnitLessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $idCourse, $idUnit, Lessons $lesson)
+    public function update(Request $request, $idCourse, $idUnit, LessonsHelper $lesson)
     {
         $lesson->name = $request->name;
         $lesson->description = $request->description;
         $lesson->content = $request->content;
         $lesson->save();
-        return redirect('/teacher/courses/' . $idCourse . '/units/' . $idUnit . '/lessons/');
+        return redirect('/admin/courses_helpers/' . $idCourse . '/units/' . $idUnit . '/lessons/');
     }
 
     /**
@@ -97,9 +99,9 @@ class CoursesHelperUnitLessonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($idCourse, $idUnit, Lessons $lesson)
+    public function destroy($idCourse, $idUnit, LessonsHelper $lesson)
     {
         $lesson->delete();
-        return redirect('/teacher/courses/' . $idCourse . '/units/' . $idUnit . '/lessons/');
+        return redirect('/admin/courses_helpers/' . $idCourse . '/units/' . $idUnit . '/lessons/');
     }
 }

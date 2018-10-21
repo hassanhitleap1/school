@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\CoursesHelpers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\CoursesHelper;
+use App\Model\UnitsHelper;
 
 class CoursesHelperUnitController extends Controller
 {
@@ -13,9 +15,9 @@ class CoursesHelperUnitController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index($id){
-        $course=Courses::find($id);
+        $course=CoursesHelper::find($id);
          $units=$course->units;
-         return view('teacher.courses.units.index')->with('units',$units)->withId($id);
+         return view('admin.courses_helpers.units.index')->with('units',$units)->withId($id);
      }
  
      /**
@@ -25,7 +27,7 @@ class CoursesHelperUnitController extends Controller
       */
      public function create($id)
      {
-         return view('teacher.courses.units.create')->withId($id);
+         return view('admin.courses_helpers.units.create')->withId($id);
      }
  
      /**
@@ -41,13 +43,13 @@ class CoursesHelperUnitController extends Controller
              'description'=>'required'
          ];
          $this->validate($request,$rules);
-         $model=new Unit;
+         $model=new UnitsHelper;
          $model->name=$request->name;
          $model->description=$request->description;
-         $model->courses_id=$id;
+         $model->helper_id=$id;
          $model->time=1.5;
          $model->save();
-         return redirect('/teacher/courses/'.$id.'/units');
+         return redirect('/admin/courses_helpers/'.$id.'/units');
      }
  
      /**
@@ -56,9 +58,9 @@ class CoursesHelperUnitController extends Controller
       * @param  int  $id
       * @return \Illuminate\Http\Response
       */
-     public function edit($id,Unit $unit)
+     public function edit($id,UnitsHelper $unit)
      {
-         return view('teacher.courses.units.edit')->withId($id)->with('unit', $unit);
+         return view('admin.courses_helpers.units.edit')->withId($id)->with('unit', $unit);
      }
  
      /**
@@ -67,13 +69,13 @@ class CoursesHelperUnitController extends Controller
       * @param  int  $id
       * @return \Illuminate\Http\Response
       */
-     public function update($id,Request $request, Unit $unit)
+     public function update($id,Request $request, UnitsHelper $unit)
      {
          $unit->name = $request->name;
          $unit->description = $request->description;
          $unit->time = 1.5;
          $unit->save();
-         return redirect('/teacher/courses/' . $id . '/units');
+         return redirect('/admin/courses_helpers/' . $id . '/units');
      }
  
      /**
@@ -82,10 +84,10 @@ class CoursesHelperUnitController extends Controller
       * @param  int  $id
       * @return \Illuminate\Http\Response
       */
-     public function destroy($id,Unit $unit)
+     public function destroy($id,UnitsHelper $unit)
      {
          $unit->delete();
-         return redirect('/teacher/courses/' . $id . '/units');
+         return redirect('/admin/courses_helpers/' . $id . '/units');
      }
  }
  

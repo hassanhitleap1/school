@@ -1,10 +1,10 @@
 @extends('admin.layouts.admin-layouts')
-@section('title', 'materials')
+@section('title', 'lessons')
 @section('content')
 
     <section class="content-header">
         <h1>
-            Data materials
+            Data lessons
             <small>advanced tables</small>
         </h1>
         <ol class="breadcrumb">
@@ -16,7 +16,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-                <a href="{{url('/admin/courses_helpers/'.$id.'/units/create')}}" class="btn btn-primary btn-lg" >Create </a>
+                <a href="{{url('/admin/courses_helpers/'.$idCourse.'/units/'.$idUnit.'/lessons/create')}}" class="btn btn-primary btn-lg" >Create </a>
             </div>
         </div>
         <div class="row">
@@ -36,22 +36,22 @@
                             </tr>
                             </thead>
                             <tbody>
-                                    @foreach($units as $unit)
-                                    <tr>
-                                        <td>{{$unit->name}}</td>
-                                        <td>{{$unit->description}}</td>
-                                        <td>
-                                            <form id="trash-form" action="{{url('/admin/courses_helpers/'.$id.'/units/'.$unit->id)}}" method="POST">
-                                                <a><i class="fa fa-fw fa-trash"  onclick="event.preventDefault();document.getElementById('trash-form').submit();"></i>Delete
-                                                </a>
-                                                <input type="hidden" name="_method" value="DELETE" />
-                                                    @csrf
-                                            </form>
-                                            <a href="{{url('/admin/courses_helpers/'.$id.'/units/'.$unit->id.'/edit')}}"><i class="fa fa-fw fa-pencil"></i>Edit</a>
-                                            <a href="{{url('/admin/courses_helpers/'.$id.'/units/'.$unit->id.'/lessons')}}"><i class="fa fa-fw  fa-book"></i>Lessons</a>
-                                        </td>
-                                    </tr>
-                                 @endforeach
+                              @foreach($lessons as $lesson)
+                                <tr>
+                                    <td>{{$lesson->name}}</td>
+                                    <td>{{$lesson->description}}</td>
+                                    <td>{{$lesson->content}}</td>
+                                    <td>
+                                        <form id="trash-form" action="{{url('/admin/courses_helpers/'.$idCourse.'/units/'.$idUnit.'/lessons/'.$lesson->id)}}" method="POST">
+                                            <a><i class="fa fa-fw fa-trash"  onclick="event.preventDefault();document.getElementById('trash-form').submit();"></i>Delete
+                                            </a>
+                                            <input type="hidden" name="_method" value="DELETE" />
+                                                @csrf
+                                        </form>
+                                        <a href="{{url('/admin/courses_helpers/'.$idCourse.'/units/'.$idUnit.'/lessons/'.$lesson->id.'/edit')}}"><i class="fa fa-fw fa-pencil"></i>Edit</a>
+                                    </td>
+                                </tr>
+                             @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -64,3 +64,4 @@
         <!-- /.row -->
     </section>
 @endsection
+           

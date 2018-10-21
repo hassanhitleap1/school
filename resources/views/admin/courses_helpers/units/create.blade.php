@@ -1,4 +1,4 @@
-@extends('teacher.layouts.teacher')
+@extends('admin.layouts.admin-layouts')
 @section('title', 'create units for courses')
 @section('content')
     <section class="content-header">
