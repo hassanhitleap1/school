@@ -34,6 +34,11 @@ Route::resource('/admin/materials', 'Admin\Material\MaterialController');
 
 Route::resource('/admin/categories','Admin\Category\CategoryController');
 
+Route::resource('/admin/courses_helpers','Admin\CoursesHelpers\CoursesHelperController');
+
+Route::resource('admin/courses_helpers/{idHelper}/units','Admin\CoursesHelpers\CoursesHelperUnitController');
+Route::resource('admin/courses_helpers/{idHelper}/units/{unitId}/lessons', 'Admin\CoursesHelpers\CoursesHelperUnitLessonController');
+
 //route for admins admin
 Route::resource('/admin/admins','Admin\Admin\AdminController',['only'=>['index','create','store']]);
 Route::get('/admin/admins/{id}/block','Admin\Admin\AdminController@blocked');
