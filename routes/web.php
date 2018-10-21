@@ -32,6 +32,8 @@ Route::resource('/admin/levels','Admin\Level\LevelController');
 
 Route::resource('/admin/materials', 'Admin\Material\MaterialController');
 
+Route::resource('/admin/categories','Admin\Category\CategoryController');
+
 //route for admins admin
 Route::resource('/admin/admins','Admin\Admin\AdminController',['only'=>['index','create','store']]);
 Route::get('/admin/admins/{id}/block','Admin\Admin\AdminController@blocked');

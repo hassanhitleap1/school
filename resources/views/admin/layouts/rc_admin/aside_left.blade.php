@@ -25,6 +25,7 @@
        <!-- /.search form -->
        <!-- sidebar menu: : style can be found in sidebar.less -->
        <ul class="sidebar-menu">
+          <li><a href="{{asset('/admin/categories')}}"><i class="fa fa-book"></i> <span>categories</span></a></li>
             <li><a href="{{asset('/admin/levels')}}"><i class="fa fa-book"></i> <span>levels</span></a></li>
           <li><a href="{{asset('/admin/materials')}}"><i class="fa fa-book"></i> <span>materials</span></a></li>
           <li><a href="{{asset('/admin/admins')}}"><i class="fa fa-book"></i> <span>admins</span></a></li>
