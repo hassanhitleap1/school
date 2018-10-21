@@ -57,7 +57,7 @@ class CoursesUnitLessonController extends Controller
                     Storage::makeDirectory($path);
                 }
                 $vedio->move($path,$name);
-                $model->path_vedio=$path.$name;
+                $model->path_vedio=$path.'/'.$name;
             } catch (Illuminate\Filesystem\FileNotFoundException $e) {
                 var_dump($e->getMessage()) ;
             }
