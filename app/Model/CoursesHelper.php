@@ -13,4 +13,8 @@ class CoursesHelper extends Model
     public function level(){
         return $this->hasOne(Level::class,'id','level_id');
     }
+
+    public function units(){
+        return $this->hasMany(UnitsHelper::class,'helper_id','id');
+    }
 }
