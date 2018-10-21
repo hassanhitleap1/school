@@ -33,7 +33,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{url('/teacher/courses/'.$idCourse.'/units/'.$idUnit.'/lessons')}}" method="POST">
+                    <form role="form" action="{{url('/teacher/courses/'.$idCourse.'/units/'.$idUnit.'/lessons')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="box-body">
                             <div class="form-group">
@@ -48,9 +48,12 @@
                                 <label for="description">content</label>
                                 <input type="text" class="form-control" id="content" placeholder="content" name="content" value="{{ old('content') }}">
                             </div>
+                            <div class="form-group">
+                                <label for="vedio">vedio</label>
+                                <input type="file" class="form-control" id="vedio" placeholder="vedio" name="vedio" value="{{ old('vedio') }}">
+                            </div>
                         </div>
                         <!-- /.box-body -->
-
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>

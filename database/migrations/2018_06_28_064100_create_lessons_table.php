@@ -19,6 +19,7 @@ class CreateLessonsTable extends Migration
             $table->text('description');
             $table->double('time');
             $table->longText('content');
+            $table->string('path_vedio')->nullable();
             $table->integer('unit_id')->unsigned();
             $table->timestamps();
         });
