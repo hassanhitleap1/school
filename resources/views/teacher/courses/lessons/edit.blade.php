@@ -27,6 +27,14 @@
         <div class="row">
             <div class="col-md-offset-2 col-md-9">
                 <!-- general form elements -->
+                @if($lesson->path_vedio != null)
+                
+                <video width="800" height="600" controls autoplay controlsList="nodownload">
+                       
+                    <source src="{{asset($lesson->path_vedio)}}" type="video/mp4">
+                        <i class="fa fa-fw fa-trash"><h1>delete</h1></i>
+                </video>
+                @endif
                 <div class="box box-primary">
                     <div class="box-header with-border">
                         <h3 class="box-title">form lesson</h3>
@@ -51,6 +59,7 @@
                             </div>
                         </div>
                         <!-- /.box-body -->
+                     
 
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary">Submit</button>
