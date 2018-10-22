@@ -25,14 +25,17 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-md-offset-2 col-md-12">
+                <a href="{{url('/teacher/courses/'.$idCourse.'/units/'.$idUnit.'/lessons/'.$lesson->id.'/delete-image')}}"><li class="fa fa-fw fa-trash fa-2x " style="color:red;">delete</li></a>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-offset-2 col-md-9">
                 <!-- general form elements -->
-                @if($lesson->path_vedio != null)
+                @if($lesson->path_vedio != null && File::exists($lesson->path_vedio))
                 
                 <video width="800" height="600" controls autoplay controlsList="nodownload">
-                       
                     <source src="{{asset($lesson->path_vedio)}}" type="video/mp4">
-                        <i class="fa fa-fw fa-trash"><h1>delete</h1></i>
                 </video>
                 @endif
                 <div class="box box-primary">
@@ -41,7 +44,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{url('/teacher/courses/'.$idCourse.'/units/'.$idUnit.'/lessons/'.$lesson->id)}}" method="POST">
+                    <form role="form" action="{{url('/teacher/courses/'.$idCourse.'/units/'.$idUnit.'/lessons/'.$lesson->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                          <input type="hidden" name="_method" value="put" />
                         <div class="box-body">
@@ -56,6 +59,10 @@
                             <div class="form-group">
                                 <label for="description">content</label>
                                 <input type="text" class="form-control" id="content" placeholder="content" name="content" value="{{ $lesson->content }}">
+                            </div>
+                            <div class="form-group">
+                                    <label for="file">vedio</label>
+                                    <input id="file" type="file" class="form-control" name="file"  value="{{ old('file') }}">
                             </div>
                         </div>
                         <!-- /.box-body -->

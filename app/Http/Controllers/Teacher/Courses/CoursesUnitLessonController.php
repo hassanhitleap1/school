@@ -7,8 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Model\Unit;
 use App\Model\Lessons;
 use Illuminate\Support\Facades\Request as RequstIlumninate;
-use File;
 use Illuminate\Support\Facades\Storage;
+use File;
+
 
 class CoursesUnitLessonController extends Controller
 {
@@ -103,6 +104,25 @@ class CoursesUnitLessonController extends Controller
      */
     public function update(Request $request, $idCourse, $idUnit, Lessons $lesson)
     {
+        if ($request->hasFile('file')) {
+            try {
+                if($lesson->path_vedio != null){
+                    if(File::exists($lesson->path_vedio)){
+                        File::delete($lesson->path_vedio);
+                    }
+                }
+                $vedio = RequstIlumninate::file('file');
+                $name = md5(uniqid(rand(), true)).'.'.$vedio->getClientOriginalExtension();
+                $path='vedio/vedio-user-1/course-'.$idCourse;
+                if(! File::isDirectory($path)){
+                    Storage::makeDirectory($path);
+                }
+                $vedio->move($path,$name);
+                $lesson->path_vedio=$path.'/'.$name;
+            } catch (Illuminate\Filesystem\FileNotFoundException $e) {
+                var_dump($e->getMessage()) ;
+            }
+        }
         $lesson->name = $request->name;
         $lesson->description = $request->description;
         $lesson->content = $request->content;
@@ -120,5 +140,18 @@ class CoursesUnitLessonController extends Controller
     {
         $lesson->delete();
         return redirect('/teacher/courses/' . $idCourse . '/units/' . $idUnit . '/lessons/');
+    }
+
+
+    public function deleteVedio($idCourse, $idUnit,  $id){
+        $lesson= Lessons::find($id);
+        if($lesson->path_vedio != null){
+            if(File::exists($lesson->path_vedio)){
+                File::delete($lesson->path_vedio);
+                $lesson->path_vedio==Null;
+                $lesson->save();
+            }
+        }
+        return redirect('/teacher/courses/' . $idCourse . '/units/' . $idUnit . '/lessons/'.$id.'/edit');
     }
 }
