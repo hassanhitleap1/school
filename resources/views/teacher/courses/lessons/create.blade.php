@@ -49,8 +49,8 @@
                                 <input type="text" class="form-control" id="content" placeholder="content" name="content" value="{{ old('content') }}">
                             </div>
                             <div class="form-group">
-                                <label for="file">file</label>
-                                <input id="file" type="file" class="form-control" name="file"  value="{{ old('file') }}>
+                                <label for="file">vedio</label>
+                                <input id="file" type="file" class="form-control" name="file"  value="{{ old('file') }}">
                             </div>
                         </div>
                         <!-- /.box-body -->
