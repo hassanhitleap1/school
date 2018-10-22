@@ -19,50 +19,59 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// admin route
-Route::get('/admin','Admin\AdminController@index');
+
 Route::get('/admin/login','Admin\AdminController@login');
 Route::get('/admin/register','Admin\AdminController@register');
 
+// admin route
+Route::group(['prefix' => '/admin','middleware' => ['admin']], function () { 
+
+    // auth admin 
+    Route::get('/','Admin\AdminController@index');
+    
+    //student 
+    Route::resource('/students','Admin\StudentController');
+    //levels
+    Route::resource('/levels','Admin\Level\LevelController');
+
+    //materials
+    Route::resource('/materials', 'Admin\Material\MaterialController');
+
+    //categories
+    Route::resource('/categories','Admin\Category\CategoryController');
+
+    //courses_helpers
+    Route::resource('/courses_helpers','Admin\CoursesHelpers\CoursesHelperController');
+    Route::resource('/courses_helpers/{idHelper}/units','Admin\CoursesHelpers\CoursesHelperUnitController');
+    Route::resource('/courses_helpers/{idHelper}/units/{unitId}/lessons', 'Admin\CoursesHelpers\CoursesHelperUnitLessonController');
+
+    //route for admins admin
+    Route::resource('/admins','Admin\Admin\AdminController',['only'=>['index','create','store']]);
+    Route::get('/admins/{id}/block','Admin\Admin\AdminController@blocked');
+    Route::get('/admins/{id}/unblock','Admin\Admin\AdminController@unblocked');
+
+    //route for tatcher admin
+    Route::resource('/teachers','Admin\Teacher\TeacherController',['only'=>['index']]);
+    Route::get('/teachers/{id}/block','Admin\Teacher\TeacherController@blocked');
+    Route::get('/teachers/{id}/unblock','Admin\Teacher\TeacherController@unblocked');
+
+    //route for student admin
+    Route::resource('/students','Admin\Student\StudentController',['only'=>['index']]);
+    Route::get('/students/{id}/block','Admin\Student\StudentController@blocked');
+    Route::get('/students/{id}/unblock','Admin\Student\StudentController@unblocked');
+
+});
 
 
-Route::resource('/admin/students','Admin\StudentController');
-
-Route::resource('/admin/levels','Admin\Level\LevelController');
-
-Route::resource('/admin/materials', 'Admin\Material\MaterialController');
-
-Route::resource('/admin/categories','Admin\Category\CategoryController');
-
-Route::resource('/admin/courses_helpers','Admin\CoursesHelpers\CoursesHelperController');
-
-Route::resource('admin/courses_helpers/{idHelper}/units','Admin\CoursesHelpers\CoursesHelperUnitController');
-Route::resource('admin/courses_helpers/{idHelper}/units/{unitId}/lessons', 'Admin\CoursesHelpers\CoursesHelperUnitLessonController');
-
-//route for admins admin
-Route::resource('/admin/admins','Admin\Admin\AdminController',['only'=>['index','create','store']]);
-Route::get('/admin/admins/{id}/block','Admin\Admin\AdminController@blocked');
-Route::get('/admin/admins/{id}/unblock','Admin\Admin\AdminController@unblocked');
-
-//route for tatcher admin
-Route::resource('/admin/teachers','Admin\Teacher\TeacherController',['only'=>['index']]);
-Route::get('/admin/teachers/{id}/block','Admin\Teacher\TeacherController@blocked');
-Route::get('/admin/teachers/{id}/unblock','Admin\Teacher\TeacherController@unblocked');
-
-//route for student admin
-Route::resource('/admin/students','Admin\Student\StudentController',['only'=>['index']]);
-Route::get('/admin/students/{id}/block','Admin\Student\StudentController@blocked');
-Route::get('/admin/students/{id}/unblock','Admin\Student\StudentController@unblocked');
 
 // teacher route
 Route::get('/teacher/login','Teacher\TeacherController@login');
 Route::get('/teacher/register','Teacher\TeacherController@register');
-Route::get('/teacher','Teacher\TeacherController@index');
 
-
-// route courses for teacher
-
-Route::prefix('/teacher')->group(function () {
+Route::group(['prefix' => '/teacher','middleware' => ['teacher']], function () { 
+    Route::get('/','Teacher\TeacherController@index');  
+    
+//  route courses for teacher
     Route::resource('/courses','Teacher\Courses\CoursesController');
     Route::resource('/courses/{id}/units','Teacher\Courses\CoursesUnitController');
     Route::resource('/courses/{courseId}/units/{unitId}/lessons', 'Teacher\Courses\CoursesUnitLessonController');

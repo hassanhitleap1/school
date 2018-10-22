@@ -21,6 +21,6 @@ class Teacher
             return $next($request);
         }
 
-        return redirect('/teacher');
+        return redirect('/teacher/login');
     }
 }

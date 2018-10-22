@@ -11,13 +11,13 @@ class LevelSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0;$i<10;$i++){
-            DB::table('levels')->insert([
-                'name_en' => str_random(10),
-                'name_ar' => str_random(10),
-                'order' => rand(1,100),
-            ]);
-        }
+        // for ($i=0;$i<10;$i++){
+        //     DB::table('levels')->insert([
+        //         'name_en' => str_random(10),
+        //         'name_ar' => str_random(10),
+        //         'order' => rand(1,100),
+        //     ]);
+        // }
 
     }
 }
