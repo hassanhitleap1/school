@@ -4,9 +4,10 @@
     <section class="content-header">
         <h1> add units for courses<small>advanced tables</small></h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Data tables</li>
+            <li><a href="{{url('/teacher')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li ><a href="{{url('/teacher/courses')}}">My Courses</a></li>
+            <li ><a href="{{url('/teacher/courses/'.$id.'/units')}}">Units </a></li>
+            <li class="active">Edit Course unit {{ $unit->name}}</li>
         </ol>
     </section>
     <section class="content">
@@ -23,6 +24,11 @@
                 @endif
                 
             </div>
+        </div>
+        <div class="row">
+                <div class="col-md-12">
+                        <a href="{{url('/teacher/courses/'.$id.'/units')}}" class="btn btn-primary btn-lg" >back </a>
+                </div>
         </div>
         <div class="row">
             <div class="col-md-offset-2 col-md-9">

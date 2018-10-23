@@ -4,9 +4,9 @@
     <section class="content-header">
         <h1> add material<small>advanced tables</small></h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Data tables</li>
+            <li><a href="{{url('/admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li ><a href="{{url('/admin/materials')}}">Materials</a></li>
+            <li class="active">Edit Material  {{$material->name_en}}</li>
         </ol>
     </section>
     <section class="content">
@@ -24,6 +24,11 @@
                 
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                    <a href="{{url('/admin/materials')}}" class="btn btn-primary btn-lg" >back </a>
+            </div>
+         </div>
         <div class="row">
             <div class="col-md-offset-2 col-md-9">
                 <!-- general form elements -->

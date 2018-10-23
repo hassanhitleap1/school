@@ -1,23 +1,16 @@
-@extends('admin.layouts.admin-layouts')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
+        @foreach ($coures as $coure)
+            <div class="col-md-3">
+                <h5>{{$coure->name}}</h5>
+                <p>{{$coure->description}}</p>
+                <h5>{{$coure->teacher->name}}</h5>
             </div>
-        </div>
+        @endforeach
+
     </div>
 </div>
 @endsection

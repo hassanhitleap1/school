@@ -8,9 +8,8 @@
             <small>advanced tables</small>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Data tables</li>
+            <li><a href="{{url('/admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Materials</li>
         </ol>
     </section>
     <section class="content">

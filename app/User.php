@@ -20,6 +20,10 @@ class User extends Authenticatable
     const DISACTIVE=0;
     const BLOCK="1";
     const UNBLOCK="0";
+    const DEFAULT_LEVEL=0;
+    const TYPE_NAME_ADMIN='Admin';
+    const TYPE_NAME_TEACHER='Teacher';
+    const TYPE_NAME_STUDENT='Student';
 
     protected $table='users';
 

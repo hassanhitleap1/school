@@ -4,9 +4,9 @@
     <section class="content-header">
         <h1> add courses<small>advanced tables</small></h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Data tables</li>
+            <li><a href="{{url('/teacher')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li ><a href="{{url('/teacher/courses')}}">My Courses</a></li>
+            <li class="active">Create Course</li>
         </ol>
     </section>
     <section class="content">
@@ -25,6 +25,11 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-md-12">
+                    <a href="{{url('/teacher/courses')}}" class="btn btn-primary btn-lg" >back </a>
+            </div>
+         </div>
+        <div class="row">
             <div class="col-md-offset-2 col-md-9">
                 <!-- general form elements -->
                 <div class="box box-primary">
@@ -33,7 +38,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{url('/teacher/courses/')}}" method="POST">
+                    <form role="form" action="{{url('/teacher/courses/')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="box-body">
                             <div class="form-group">
@@ -44,6 +49,10 @@
                                 <label for="description">Description</label>
                                 <input type="text" class="form-control" id="description" placeholder="Description" name="description" value="{{ old('description') }}">
                             </div>
+                            <div class="form-group">
+                                    <label for="cover">cover</label>
+                                    <input id="cover" type="file" class="form-control" name="cover"  value="{{ old('cover') }}">
+                                </div>
                         </div>
                         <!-- /.box-body -->
 
