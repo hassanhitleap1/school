@@ -5,8 +5,9 @@
         <h1> add units for courses<small>advanced tables</small></h1>
         <ol class="breadcrumb">
             <li><a href="{{url('/teacher')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Data tables</li>
+            <li ><a href="{{url('/teacher/courses')}}">My Courses</a></li>
+            <li ><a href="{{url('/teacher/courses/'.$id.'/units')}}">Units </a></li>
+            <li class="active">create Unit Course</li>
         </ol>
     </section>
     <section class="content">

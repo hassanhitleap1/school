@@ -5,8 +5,8 @@
         <h1> add material<small>advanced tables</small></h1>
         <ol class="breadcrumb">
             <li><a href="{{url('/teacher')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Data tables</li>
+            <li ><a href="{{url('/teacher/courses')}}">My Courses</a></li>
+            <li class="active">Edit Course {{$course->name}}</li>
         </ol>
     </section>
     <section class="content">
