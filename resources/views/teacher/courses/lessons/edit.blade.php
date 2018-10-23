@@ -25,6 +25,11 @@
             </div>
         </div>
         <div class="row">
+                <div class="col-md-12">
+                        <a href="{{url('/teacher/courses/'.$idCourse.'/units/'.$idUnit.'/lessons')}}" class="btn btn-primary btn-lg" >back </a>
+                </div>
+        </div>
+        <div class="row">
             <div class="col-md-offset-2 col-md-12">
                 <a href="{{url('/teacher/courses/'.$idCourse.'/units/'.$idUnit.'/lessons/'.$lesson->id.'/delete-image')}}"><li class="fa fa-fw fa-trash fa-2x " style="color:red;">delete</li></a>
             </div>
