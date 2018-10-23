@@ -26,6 +26,11 @@
             </div>
         </div>
         <div class="row">
+            <div class="col-md-12">
+                    <a href="{{url('/admin/admins')}}" class="btn btn-primary btn-lg" >back </a>
+            </div>
+         </div>
+        <div class="row">
             <div class="col-md-offset-2 col-md-9">
                 <!-- general form elements -->
                 <div class="box box-primary">

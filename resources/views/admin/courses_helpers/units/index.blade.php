@@ -16,6 +16,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
+                <a href="{{url('/admin/courses_helpers')}}" class="btn btn-primary btn-lg" >back </a>
                 <a href="{{url('/admin/courses_helpers/'.$id.'/units/create')}}" class="btn btn-primary btn-lg" >Create </a>
             </div>
         </div>

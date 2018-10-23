@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Teacher\Courses;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Courses;
+use Illuminate\Support\Facades\Auth;
 
 class CoursesController extends Controller
 {
@@ -15,7 +16,7 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        $courses=Courses::all();
+        $courses=Courses::where('teacher_id',Auth::user()->id)->get();
         return view('teacher.courses.index')->withCourses($courses);
     }
 
@@ -46,7 +47,7 @@ class CoursesController extends Controller
         $model->name=$request->name;
         $model->description=$request->description;
         $model->level_id=1;
-        $model->teacher_id=1;
+        $model->teacher_id=Auth::user()->id;
         $model->time=1.5;
         $model->save();
         return redirect('/teacher/courses');
@@ -86,7 +87,6 @@ class CoursesController extends Controller
         $course->name=$request->name;
         $course->description=$request->description;
         $course->level_id=1;
-        $course->teacher_id=1;
         $course->time=1.5;
         $course->save();
         return redirect('/teacher/courses');
