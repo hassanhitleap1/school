@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Courses;
 use Illuminate\Support\Facades\Auth;
-
+use File;
+use Illuminate\Support\Facades\Storage;
 class CoursesController extends Controller
 {
     /**
@@ -40,10 +41,28 @@ class CoursesController extends Controller
     {
         $rules=[
             'name'=>'required',
-            'description'=>'required'
+            'description'=>'required',
+            'cover'=>'image',
         ];
         $this->validate($request,$rules);
         $model=new Courses;
+        if ($request->hasFile('cover')) {
+            if($request->file('cover')->isValid()) {
+                try {
+                    $file = $request->file('cover');
+                    $name = md5(uniqid(rand(), true)).'.'.$file->getClientOriginalExtension();
+                    $path='images/covers';
+                    if(! File::isDirectory($path)){
+                        Storage::makeDirectory($path);
+                    }
+                    $model->cover_path=$path.'/'.$name;
+                    $file->move( $path,$name);
+                } catch (Illuminate\Filesystem\FileNotFoundException $e) {
+                    var_dump($e->getMessage()) ;
+                }
+            } 
+        }
+
         $model->name=$request->name;
         $model->description=$request->description;
         $model->level_id=1;
@@ -84,6 +103,26 @@ class CoursesController extends Controller
      */
     public function update(Request $request, Courses $course)
     {
+        $rules=[
+            'cover'=>'image',
+        ];
+        $this->validate($request,$rules);
+        if ($request->hasFile('cover')) {
+            if($request->file('cover')->isValid()) {
+                try {
+                    $file = $request->file('cover');
+                    $name = md5(uniqid(rand(), true)).'.'.$file->getClientOriginalExtension();
+                    $path='images/covers';
+                    if(! File::isDirectory($path)){
+                        Storage::makeDirectory($path);
+                    }
+                    $course->cover_path=$path.'/'.$name;
+                    $file->move( $path,$name);
+                } catch (Illuminate\Filesystem\FileNotFoundException $e) {
+                    var_dump($e->getMessage()) ;
+                }
+            } 
+        }
         $course->name=$request->name;
         $course->description=$request->description;
         $course->level_id=1;
@@ -102,5 +141,22 @@ class CoursesController extends Controller
     {
         $course->delete();
         return redirect('/teacher/courses');
+    }
+
+    /**
+     * delete cover coruse 
+     * @param $id integer
+     */
+    public function deleteCover($id){
+        $coruse= Courses::find($id);
+        if($coruse->cover_path != null){
+            if(File::exists($coruse->cover_path)){
+                File::delete($coruse->cover_path);
+                $coruse->cover_path=Null;
+                $coruse->save();
+            }
+        }
+        return redirect('/teacher/courses/' . $id . '/edit');
+    
     }
 }

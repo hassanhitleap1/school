@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
@@ -73,6 +71,8 @@ Route::group(['prefix' => '/teacher','middleware' => ['teacher']], function () {
     
 //  route courses for teacher
     Route::resource('/courses','Teacher\Courses\CoursesController');
+    Route::get('/courses/{id}/delete-cover','Teacher\Courses\CoursesController@deleteCover');
+
     Route::resource('/courses/{id}/units','Teacher\Courses\CoursesUnitController');
     Route::resource('/courses/{courseId}/units/{unitId}/lessons', 'Teacher\Courses\CoursesUnitLessonController');
     Route::get('/courses/{courseId}/units/{unitId}/lessons/{id}/delete-image', 'Teacher\Courses\CoursesUnitLessonController@deleteVedio');

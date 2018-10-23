@@ -38,7 +38,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form role="form" action="{{url('/teacher/courses/'.$course->id)}}" method="POST">
+                    <form role="form" action="{{url('/teacher/courses/'.$course->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="_method" value="put" />
                         <div class="box-body">
@@ -50,6 +50,17 @@
                                 <label for="description">Description</label>
                                 <input type="text" class="form-control" id="description" placeholder="description" name="description" value="{{$course->description}}">
                             </div>
+                            <div class="form-group">
+                                @if (!$course->cover_path == null)
+                                <div class="container">
+                                        <img src="{{asset($course->cover_path)}}" alt="Snow">
+                                        <a class="btn  btn-lg" href="{{url('/teacher/courses/'.$course->id.'/delete-cover')}}"><li class="fa fa-fw fa-trash"></li>delete</a>
+                                </div>
+                                @endif
+
+                                    <label for="cover">cover</label>
+                                    <input id="cover" type="file" class="form-control" name="cover"  value="{{ old('cover') }}">
+                                </div>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
@@ -62,4 +73,38 @@
             </div>
         </div>
     </section>
+
+
+    <style>
+    .container {
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container .btn:hover {
+  background-color: black;
+}
+    </style>
 @endsection

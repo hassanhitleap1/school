@@ -20,6 +20,7 @@ class CreateCoursesTable extends Migration
             $table->integer('teacher_id')->unsigned();
             $table->integer('level_id')->unsigned();
             $table->double('time');
+            $table->string('cover_path')->nullable();
             $table->timestamps();
         });
     }

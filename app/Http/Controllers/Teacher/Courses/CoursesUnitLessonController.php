@@ -148,7 +148,7 @@ class CoursesUnitLessonController extends Controller
         if($lesson->path_vedio != null){
             if(File::exists($lesson->path_vedio)){
                 File::delete($lesson->path_vedio);
-                $lesson->path_vedio==Null;
+                $lesson->path_vedio=Null;
                 $lesson->save();
             }
         }
