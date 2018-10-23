@@ -6,7 +6,7 @@
         <ol class="breadcrumb">
             <li><a href="{{url('/admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
             <li ><a href="{{url('/admin/levels')}}">levels</a></li>
-            <li class="active">edit {{$level->name}}</li>
+            <li class="active">edit {{$level->name_en}}</li>
         </ol>
     </section>
     <section class="content">

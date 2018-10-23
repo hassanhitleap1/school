@@ -4,9 +4,10 @@
     <section class="content-header">
         <h1> add units for Helper courses<small>advanced tables</small></h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Data tables</li>
+            <li><a href="{{url('/admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li ><a href="{{url('/admin/courses_helpers')}}">Helper Coureses</a></li>
+            <li ><a href="{{url('/admin/courses_helpers/'.$id.'/units')}}">Units </a></li>
+            <li class="active">Create New Lesson </li>
         </ol>
     </section>
     <section class="content">

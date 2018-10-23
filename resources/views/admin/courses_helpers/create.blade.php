@@ -5,8 +5,8 @@
         <h1> add coursesHelpers<small>advanced tables</small></h1>
         <ol class="breadcrumb">
             <li><a href="{{url('/admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Data tables</li>
+            <li ><a href="{{url('/admin/courses_helpers')}}">Helper Coureses</a></li>
+            <li class="active">Create New Course</li>
         </ol>
     </section>
     <section class="content">

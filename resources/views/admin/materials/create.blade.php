@@ -5,8 +5,8 @@
         <h1> add level<small>advanced tables</small></h1>
         <ol class="breadcrumb">
             <li><a href="{{url('/admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-       
-            <li class="active">create Unit Course</li>
+            <li ><a href="{{url('/admin/materials')}}">Materials</a></li>
+            <li class="active">Create New Material</li>
         </ol>
     </section>
     <section class="content">

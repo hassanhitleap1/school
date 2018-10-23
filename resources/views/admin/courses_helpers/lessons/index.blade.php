@@ -9,8 +9,9 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="{{url('/admin')}}"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Tables</a></li>
-            <li class="active">Data tables</li>
+            <li ><a href="{{url('/admin/courses_helpers')}}">My Courses</a></li>
+            <li ><a href="{{url('/admin/courses_helpers/'.$idCourse.'/units')}}">Units </a></li>
+            <li class="active">lessons</li>
         </ol>
     </section>
     <section class="content">
