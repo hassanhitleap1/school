@@ -6,13 +6,7 @@
     <title>Educef 02</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="{{asset('educef/assets/lib/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('educef/assets/css/font/flaticon/flaticon.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('educef/assets/lib/slick/slick.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('educef/assets/lib/slick/slick-theme.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('educef/assets/css/animate.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('educef/assets/css/style.css')}}">
+    @include('layouts.head')
   </head>
   <body class="home02">
     <header class="header-content">
@@ -999,6 +993,7 @@
         <div class="footer__bottom">&copy; 2018 RubikThemes</div>
       </div>
     </footer>
+    @include('layouts.js')
     <script src="{{asset('educef/assets/lib/js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('educef/assets/lib/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('educef/assets/lib/slick/slick.min.js')}}"></script>
