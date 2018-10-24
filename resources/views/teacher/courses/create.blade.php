@@ -50,6 +50,11 @@
                                 <input type="text" class="form-control" id="description" placeholder="Description" name="description" value="{{ old('description') }}">
                             </div>
                             <div class="form-group">
+                                <a href="#" class="btn btn-block btn-primary" id="albomImge">
+                                    <li class="fa fa-file-image-o fa-2x"> select image form albom</li>
+                                </a>
+                            </div>
+                            <div class="form-group">
                                     <label for="cover">cover</label>
                                     <input id="cover" type="file" class="form-control" name="cover"  value="{{ old('cover') }}">
                                 </div>
@@ -64,5 +69,17 @@
                 <!-- /.box -->
             </div>
         </div>
+              @include('teacher.courses.model')
+            <script>
+                $(function() {
+            
+                        $("#albomImge").click(function (e) { 
+                            e.preventDefault();
+                            $( ".modal-content" ).load( "http://localhost/school/public/teacher/courses-load-albom" , function() {
+                                $('#imagemodal').modal('show');   
+                            });
+                        });   
+                });
+             </script>
     </section>
 @endsection
