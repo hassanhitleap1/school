@@ -72,14 +72,15 @@ class CoverHelperController extends Controller
        return redirect('/admin/cover_helpers');
     }
 
-    /**
+        /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CoverHelper $model)
+    public function destroy($id)
     {
+        $model=CoverHelper::find($id);
         $model->delete();
         return redirect('/admin/cover_helpers');
     }

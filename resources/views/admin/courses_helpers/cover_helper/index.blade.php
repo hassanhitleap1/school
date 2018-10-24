@@ -42,11 +42,11 @@
                                     <td>{{$coverHelper->material->name_en}}</td>
                                     <td><img src="{{asset($coverHelper->cover_path_help)}}" style="with:200px; height: 200px;" /></td>
                                     <td>
-                                        <form id="trash-form" action="{{url('/admin/cover_helpers/'.$coverHelper->id)}}" method="POST">
-                                            <a><i class="fa fa-fw fa-trash"  onclick="event.preventDefault();
-                                                     document.getElementById('trash-form').submit();"></i>Delete</a>
-                                                     <input type="hidden" name="_method" value="DELETE" />
-                                                     @csrf
+                                            <a><i class="fa fa-fw fa-trash"  onclick="event.preventDefault();document.getElementById('trash-form-cover').submit();"></i>Delete
+                                            </a>
+                                         <form id="trash-form-cover" action="{{route('cover_helpers.destroy',['cover_helper'=>$coverHelper->id])}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="_method" value="DELETE" />   
                                         </form>
                                     </td>
                                 </tr>

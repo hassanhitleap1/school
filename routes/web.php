@@ -28,7 +28,7 @@ Route::group(['prefix' => '/admin','middleware' => ['admin']], function () {
     Route::get('/','Admin\AdminController@index');
     
     //student 
-    Route::resource('/students','Admin\StudentController');
+   // Route::resource('/students','Admin\StudentController');
     //levels
     Route::resource('/levels','Admin\Level\LevelController');
 
@@ -38,13 +38,14 @@ Route::group(['prefix' => '/admin','middleware' => ['admin']], function () {
     //categories
     Route::resource('/categories','Admin\Category\CategoryController');
 
+    // defaut image cover helper 
+    Route::resource('/cover_helpers','Admin\CoursesHelpers\CoverHelperController');
+
     //courses_helpers
     Route::resource('/courses_helpers','Admin\CoursesHelpers\CoursesHelperController');
     Route::resource('/courses_helpers/{idHelper}/units','Admin\CoursesHelpers\CoursesHelperUnitController');
     Route::resource('/courses_helpers/{idHelper}/units/{unitId}/lessons', 'Admin\CoursesHelpers\CoursesHelperUnitLessonController');
    
-    // defaut image cover helper 
-    Route::resource('/cover_helpers','Admin\CoursesHelpers\CoverHelperController');
 
     //route for admins admin
     Route::resource('/admins','Admin\Admin\AdminController',['only'=>['index','create','store']]);
