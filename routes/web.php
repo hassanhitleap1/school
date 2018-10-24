@@ -74,8 +74,8 @@ Route::group(['prefix' => '/teacher','middleware' => ['teacher']], function () {
     Route::get('/','Teacher\TeacherController@index');  
     
 //  route courses for teacher
+    Route::get('/courses/load-albom','Teacher\Courses\CoursesAlbomController@index')->name('load-albom');
     Route::resource('/courses','Teacher\Courses\CoursesController');
-    Route::get('/courses-load-albom','Teacher\Courses\CoursesAlbomController@index');
     Route::get('/courses/{id}/delete-cover','Teacher\Courses\CoursesController@deleteCover');
 
     Route::resource('/courses/{id}/units','Teacher\Courses\CoursesUnitController');

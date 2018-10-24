@@ -75,7 +75,7 @@
             
                         $("#albomImge").click(function (e) { 
                             e.preventDefault();
-                            $( ".modal-content" ).load( "http://localhost/school/public/teacher/courses-load-albom" , function() {
+                            $( ".modal-body" ).load( "load-albom" , function() {
                                 $('#imagemodal').modal('show');   
                             });
                         });   
