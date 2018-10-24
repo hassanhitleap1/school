@@ -78,4 +78,4 @@ Route::group(['prefix' => '/teacher','middleware' => ['teacher']], function () {
     Route::get('/courses/{courseId}/units/{unitId}/lessons/{id}/delete-image', 'Teacher\Courses\CoursesUnitLessonController@deleteVedio');
 });
 
-
+Route::get('/course','HomeController@course');

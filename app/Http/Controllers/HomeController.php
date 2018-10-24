@@ -18,4 +18,9 @@ class HomeController extends Controller
         $coures= Courses::all();
         return view('home')->withCoures($coures);
     }
+
+    public function course(){
+        $coures= Courses::all();
+        return view('courses')->withCoures($coures);
+    }
 }

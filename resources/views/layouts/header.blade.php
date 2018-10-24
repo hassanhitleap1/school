@@ -92,11 +92,16 @@
               <div class="nav-right__notifications"><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-commerce-1 nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-bell nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a>
                 <div class="nav-right__profile"><i class="glyph-icon flaticon-profile-2 nav-right__profile__icon"></i><span class="nav-right__profile__status"></span>
                   <div class="profile">
-                    <div class="profile__avarta"><img class="profile__image" src="{{asset('educef/assets/img/30w.jpg')}}" alt=""></div><a class="profile__user-name" href="#">Alex Sander</a><a class="profile__course" href="#"><i class="glyph-icon flaticon-profile profile__icon"></i><span class="profile__text">My profile</span></a><a class="profile__course" href="#"><i class="glyph-icon flaticon-shield profile__icon"></i><span class="profile__text">My course</span></a><a class="btn btn-default button-default profile__btn" href="#">Log out</a>
+                    <div class="profile__avarta"><img class="profile__image" src="{{asset('educef/assets/img/30w.jpg')}}" alt=""></div>
+                    <a class="profile__user-name" href="#">{{\Auth::user()->name}}</a><a class="profile__course" href="#"><i class="glyph-icon flaticon-profile profile__icon"></i><span class="profile__text">My profile</span></a><a class="profile__course" href="#"><i class="glyph-icon flaticon-shield profile__icon"></i><span class="profile__text">My course</span></a>
+                    <a class="btn btn-default button-default profile__btn"  href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
                   </div>
                 </div>
               </div>
             </div>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
           @else   
           <div class="nav navbar-nav navbar-right nav-right--notlogin">
               <div class="nav-right__notifications"><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-shapes nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-commerce-1 nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a></div>
@@ -122,18 +127,8 @@
                     </ul>
                   </div>
                 </li>
-                <li class="menu-main__item "><a class="menu-main__link " href="#" id="course">course</a>
-                  <div class="dropdown-catagories dropdown-catagories--menu">
-                    <ul class="dropdown-catagories__list">
-                      <li class="dropdown-catagories__item "><a class="dropdown-catagories__link dropdown-catagories__link--full" href="categories.html">course categories</a></li>
-                      <li class="dropdown-catagories__item "><a class="dropdown-catagories__link dropdown-catagories__link--full" href="course-listing.html">course list</a></li>
-                      <li class="dropdown-catagories__item "><a class="dropdown-catagories__link dropdown-catagories__link--full" href="course-grid.html">course grid</a></li>
-                      <li class="dropdown-catagories__item "><a class="dropdown-catagories__link dropdown-catagories__link--full" href="course-single.html">course single</a></li>
-                      <li class="dropdown-catagories__item "><a class="dropdown-catagories__link dropdown-catagories__link--full" href="course-detail.html">course details</a></li>
-                      <li class="dropdown-catagories__item "><a class="dropdown-catagories__link dropdown-catagories__link--full" href="search-result.html">course search result</a></li>
-                      <li class="dropdown-catagories__item "><a class="dropdown-catagories__link dropdown-catagories__link--full" href="instructor-details.html">instructor details</a></li>
-                    </ul>
-                  </div>
+                <li class="menu-main__item ">
+                  <a class="menu-main__link " href="{{url('/course')}}" id="course">course</a>
                 </li>
                 <li class="menu-main__item "><a class="menu-main__link " href="#" id="bundle">bundle</a>
                   <div class="dropdown-catagories dropdown-catagories--menu">
