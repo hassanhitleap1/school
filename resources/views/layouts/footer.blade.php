@@ -11,9 +11,9 @@
         <div class="row footer__content">
           <div class="col-lg-5 col-md-5"><a class="logo__link footer__logo" href="http://swlabs.co/"><img class="logo__image" src="{{asset('educef/assets/img/logo/Logo-footer.png')}}" alt="Logo Educef"></a>
             <p class="footer__item__sub">
-              Education, Inc.<br />
-              3601 Seneca Street, New York City<br />
-              NY 10010, USA
+              {{config('app.name')}}, Inc.<br />
+               khaled bin alwaied, Amman Jordan<br />
+               buliding number 20 floor one
             </p>
                 <div class="asocials">
                   <ul class="asocials__list">
@@ -28,7 +28,7 @@
           </div>
           <div class="col-lg-7 col-md-7 footer__content__right">
             <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-4 footer__item">
+              {{-- <div class="col-lg-4 col-md-4 col-sm-4 footer__item">
                 <h3 class="footer__item__title">System</h3>
                     <ul class="footer-link__list">
                       <li class="footer-link__item"><a class="footer-link__link ">Help center</a>
@@ -44,16 +44,15 @@
                       <li class="footer-link__item"><a class="footer-link__link ">Social</a>
                       </li>
                     </ul>
-              </div>
+              </div> --}}
               <div class="col-lg-4 col-md-4 col-sm-4 footer__item">
-                <h3 class="footer__item__title">more</h3>
+                <h3 class="footer__item__title">page</h3>
                     <ul class="footer-link__list">
                       <li class="footer-link__item"><a class="footer-link__link ">About us</a>
                       </li>
-                      <li class="footer-link__item"><a class="footer-link__link ">Blog</a>
+                      <li class="footer-link__item"><a class="footer-link__link ">News</a>
                       </li>
-                      <li class="footer-link__item"><a class="footer-link__link ">Service</a>
-                      </li>
+
                       <li class="footer-link__item"><a class="footer-link__link ">Sign in</a>
                       </li>
                       <li class="footer-link__item"><a class="footer-link__link ">Sign up</a>
@@ -72,6 +71,6 @@
             </div>
           </div>
         </div>
-        <div class="footer__bottom">&copy; 2018 RubikThemes</div>
+        <div class="footer__bottom">&copy; 2017 TO {{date('Y')}} - {{config('app.name')}}</div>
       </div>
     </footer>
