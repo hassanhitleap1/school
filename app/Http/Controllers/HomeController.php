@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $coures= Courses::all();
+        $coures= Courses::take(10)->get();
         return view('home')->withCoures($coures);
     }
 
