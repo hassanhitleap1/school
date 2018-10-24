@@ -89,22 +89,46 @@
                         <div class="undefined courses__item">
                           <div class="courses__wapper">
                             <div class="col-equal courses__top">
-                              <div class="courses__top__wapper"><img class="courses__top__image" src="{{asset('educef/assets/img/courses-image/1.jpg')}}" alt=""></div>
+                              <div class="courses__top__wapper">
+                                <img class="courses__top__image" src="{{asset('educef/assets/img/courses-image/1.jpg')}}" alt="">
+                              </div>
                               <div class="courses__top__bundle">bundle</div>
                               <div class="courses__top__bt-seller">best seller</div>
                               <div class="courses__hover">
-                                <div class="courses__hover-content"><span class="courses__hover-content__item"><span class="glyph-icon flaticon-shapes courses__hover-content__icon"></span></span><span class="courses__hover-content__item"><span class="glyph-icon flaticon-interface courses__hover-content__icon"></span></span></div>
+                                <div class="courses__hover-content">
+                                <span class="courses__hover-content__item  course_likes " idCourse="{{$coure->id}}">
+                                  <span class="glyph-icon flaticon-shapes courses__hover-content__icon">
+                                  </span>
+                                  </span>
+                                  <span class="courses__hover-content__item">
+                                  <span class="glyph-icon flaticon-interface courses__hover-content__icon course_likes">
+                                  </span>
+                                  </span>
+                                  </div>
                               </div>
                             </div>
-                            <div class="col-equal courses__content"><a class="courses__content__title" href="#">{{$coure->name}}</a>
-                              <div class="courses__content__author"><a class="courses__col-left" href="#"><span class="courses__content__avatar"><img class="courses__content__image" src="assets/img/partner/partner-details-1.png')}}" alt=""></span><span class="courses__content__author-name">T . {{$coure->teacher->name}}</span></a>
+                            <div class="col-equal courses__content">
+                              <a class="courses__content__title" href="#">{{$coure->name}}</a>
+                              <div class="courses__content__author">
+                              <a class="courses__col-left" href="#">
+                              <span class="courses__content__avatar">
+                              <img class="courses__content__image" src="assets/img/partner/partner-details-1.png')}}" alt="">
+                              </span>
+                              <span class="courses__content__author-name">T . {{$coure->teacher->name}}</span>
+                              </a>
                                 <div class="courses__col-right">
                                   <div class="rating-start" data-rating="5"></div>
                                 </div>
                               </div>
                               <div class="courses__content__info">
                                 <div class="courses__col-left">
-                                  <div class="col-left__item"><span class="courses__content__icon"><span class="glyph-icon flaticon-shapes icon-custom"></span></span><span class="courses__content__number">{{$coure->likes->count()}}</span></div>
+                                  <div class="col-left__item">
+                                  <span class="courses__content__icon">
+                                  <span class="glyph-icon flaticon-shapes icon-custom">
+                                  </span>
+                                  </span>
+                                  <span class="courses__content__number">{{$coure->likes->count()}}</span>
+                                  </div>
                                   <div class="col-left__item"><span class="courses__content__icon"><span class="glyph-icon flaticon-profile-1 icon-custom"></span></span><span class="courses__content__number">347</span></div>
                                 </div>
                                 <div class="courses__col-right courses__content__price">$100</div>
@@ -163,7 +187,7 @@
                           <div class="courses__top__bundle">bundle</div>
                           <div class="courses__top__bt-seller">best seller</div>
                           <div class="courses__hover">
-                            <div class="courses__hover-content"><span class="courses__hover-content__item"><span class="glyph-icon flaticon-shapes courses__hover-content__icon"></span></span><span class="courses__hover-content__item"><span class="glyph-icon flaticon-interface courses__hover-content__icon"></span></span></div>
+                            <div class="courses__hover-content"><span class="courses__hover-content__item"><span class="glyph-icon flaticon-shapes courses__hover-content__icon "  ></span></span><span class="courses__hover-content__item"><span class="glyph-icon flaticon-interface courses__hover-content__icon"></span></span></div>
                           </div>
                         </div>
                         <div class="col-equal courses__content"><a class="courses__content__title" href="#">neutal networks and for deep learning</a>
