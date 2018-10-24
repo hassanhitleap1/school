@@ -86,21 +86,26 @@
               </div>
             </div>
           </form>
+          @auth
           <div class="nav navbar-nav navbar-right nav-right nav-right--login">
-            <button class="btn btn-default button-default nav-right__instructor" type="submit">Instructors</button>
-            <div class="nav-right__notifications"><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-commerce-1 nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-bell nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a>
-              <div class="nav-right__profile"><i class="glyph-icon flaticon-profile-2 nav-right__profile__icon"></i><span class="nav-right__profile__status"></span>
-                <div class="profile">
-                  <div class="profile__avarta"><img class="profile__image" src="{{asset('educef/assets/img/30w.jpg')}}" alt=""></div><a class="profile__user-name" href="#">Alex Sander</a><a class="profile__course" href="#"><i class="glyph-icon flaticon-profile profile__icon"></i><span class="profile__text">My profile</span></a><a class="profile__course" href="#"><i class="glyph-icon flaticon-shield profile__icon"></i><span class="profile__text">My course</span></a><a class="btn btn-default button-default profile__btn" href="#">Log out</a>
+              <button class="btn btn-default button-default nav-right__instructor" type="submit">Instructors</button>
+              <div class="nav-right__notifications"><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-commerce-1 nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-bell nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a>
+                <div class="nav-right__profile"><i class="glyph-icon flaticon-profile-2 nav-right__profile__icon"></i><span class="nav-right__profile__status"></span>
+                  <div class="profile">
+                    <div class="profile__avarta"><img class="profile__image" src="{{asset('educef/assets/img/30w.jpg')}}" alt=""></div><a class="profile__user-name" href="#">Alex Sander</a><a class="profile__course" href="#"><i class="glyph-icon flaticon-profile profile__icon"></i><span class="profile__text">My profile</span></a><a class="profile__course" href="#"><i class="glyph-icon flaticon-shield profile__icon"></i><span class="profile__text">My course</span></a><a class="btn btn-default button-default profile__btn" href="#">Log out</a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          @else   
           <div class="nav navbar-nav navbar-right nav-right--notlogin">
-            <div class="nav-right__notifications"><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-shapes nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-commerce-1 nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a></div>
-            <button class="btn btn-default button-default nav-right__become" type="submit">become an Instructor</button>
-            <div class="nav-right__signin"><a class="nav-right__signin__link" href="#" data-toggle="modal" data-target="#modal-signin" data-modal-target="#sign-in">Sign in</a><span>|</span><a class="nav-right__signin__link" href="#" data-toggle="modal" data-target="#modal-signin" data-modal-target="#sign-up">sign up</a></div>
-          </div>
+              <div class="nav-right__notifications"><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-shapes nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-commerce-1 nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a></div>
+              <button class="btn btn-default button-default nav-right__become" type="submit">become an Instructor</button>
+              <div class="nav-right__signin"><a class="nav-right__signin__link" href="#" data-toggle="modal" data-target="#modal-signin" data-modal-target="#sign-in">Sign in</a><span>|</span><a class="nav-right__signin__link" href="#" data-toggle="modal" data-target="#modal-signin" data-modal-target="#sign-up">sign up</a></div>
+            </div>
+          @endauth
+          
+          
         </nav>
       </div>
     </div>

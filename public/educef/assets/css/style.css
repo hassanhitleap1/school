@@ -8450,9 +8450,7 @@ body {
 /*=============================================
 2.5 Home 2 page
 =============================================*/
-.home02 header .nav-right--login {
-  display: none;
-}
+
 
 .home02 header .nav-right--notlogin {
   display: inline-block;
