@@ -3,10 +3,12 @@
       <div class="container">
         <nav class="navbar navbar-inverse header-top__top">
           <div class="navbar-header"><a class="navbar-brand logo__link" href="http://swlabs.co/"><img class="logo__image" src="{{asset('educef/assets/img/logo/Logo-header.png')}}" alt="Logo Educef"></a></div>
-          <div class="nav navbar-nav navbar-left categories"><a class="dropdown-toggle categories__button"><i class="glyph-icon flaticon-signs-1 categories__icon"></i><span class="categories__text">categories</span></a>
+          <div class="nav navbar-nav navbar-left categories"><a class="dropdown-toggle categories__button"><i class="glyph-icon flaticon-signs-1 categories__icon"></i><span class="categories__text">subject</span></a>
             <div class="dropdown-catagories">
                   <ul class="dropdown-catagories__list ">
-                    <li class="dropdown-catagories__item"><a class="dropdown-catagories__link " href="#">Business</a><span class="glyph-icon flaticon-arrows-3 dropdown-catagories__icon"></span>
+                    <?php  $categories= \App\Model\Category::all();  ?>
+                    @foreach($categories as $category)
+                      <li class="dropdown-catagories__item"><a class="dropdown-catagories__link " href="#">{{$category->name_en}}</a><span class="glyph-icon flaticon-arrows-3 dropdown-catagories__icon"></span>
                       <div class="cate-sub">
                         <ul class="cate-sub__list">
                           <li class="cate-sub__item"><a class="cate-sub__link" href="#">Finance</a></li>
@@ -17,6 +19,8 @@
                         </ul>
                       </div>
                     </li>
+                    @endforeach
+
                     <li class="dropdown-catagories__item"><a class="dropdown-catagories__link " href="#">Design</a><span class="glyph-icon flaticon-arrows-3 dropdown-catagories__icon"></span>
                       <div class="cate-sub">
                         <ul class="cate-sub__list">

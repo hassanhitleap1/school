@@ -84,3 +84,5 @@ Route::group(['prefix' => '/teacher','middleware' => ['teacher']], function () {
 });
 
 Route::get('/course','HomeController@course');
+
+Route::get('/like-course','ActionStudent@likeCourse');

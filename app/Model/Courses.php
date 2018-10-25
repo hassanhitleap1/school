@@ -4,6 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\CorseLike;
 
 class Courses extends Model
 {
@@ -17,4 +18,8 @@ class Courses extends Model
         return $this->hasOne(User::class,'id','teacher_id');
     }
 
+    public function likes()
+    {
+        return $this->hasMany(CorseLike::class, 'course_id', 'id');
+    }
 }

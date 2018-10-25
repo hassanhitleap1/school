@@ -5,3 +5,4 @@
     <script src="{{asset('educef/assets/js/slicks-2.js')}}"></script>
     <script src="{{asset('educef/assets/js/script.js')}}"></script>
     <script src="{{asset('educef/assets/js/home-2.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
