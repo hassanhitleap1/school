@@ -108,9 +108,9 @@
                               </div>
                             </div>
                             <div class="col-equal courses__content">
-                              <a class="courses__content__title" href="#">{{$coure->name}}</a>
+                              <a class="courses__content__title" href="{{url('/course/'.$coure->id)}}">{{$coure->name}}</a>
                               <div class="courses__content__author">
-                              <a class="courses__col-left" href="#">
+                              <a class="courses__col-left" href="{{url('/course/'.$coure->id)}}">
                               <span class="courses__content__avatar">
                               <img class="courses__content__image" src="assets/img/partner/partner-details-1.png')}}" alt="">
                               </span>

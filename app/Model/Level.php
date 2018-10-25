@@ -16,9 +16,13 @@ class Level extends Model
     {
         parent::boot();
 
-        self::saved(function($model){
-            $model->create_at= date('Y-m-d');
-        });
+        // self::saved(function($model){
+        //     $model->create_at= date('Y-m-d');
+        // });
 
+    }
+
+    public function courses(){
+        return $this->hasMany(Courses::class,'id','level_id');
     }
 }
