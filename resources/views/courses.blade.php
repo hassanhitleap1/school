@@ -74,10 +74,10 @@
               <div class="courses-by-gird">
                             <div class="row courses__list ">
                               @foreach ($coures as $course)
-                              <div class="col-lg-4 col-md-6 col-sm-6 courses__item">
+                                <div class="col-lg-4 col-md-6 col-sm-6 courses__item">
                                   <div class="courses__wapper">
                                     <div class="col-equal courses__top">
-                                      <div class="courses__top__wapper"><img class="courses__top__image" src="assets/img/courses-image/0.jpg" alt=""></div>
+                                      <div class="courses__top__wapper"><img class="courses__top__image" src="{{$course->cover_path}}" alt=""></div>
                                       <div class="courses__top__bundle">bundle</div>
                                       <div class="courses__top__bt-seller">best seller</div>
                                       <div class="courses__hover">
