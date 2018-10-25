@@ -17,7 +17,8 @@ class Teacher
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user() &&  Auth::user()->type == User::TEACHER ) {
+        //&&  Auth::user()->type == User::TEACHER 
+        if (Auth::user() ) {
             return $next($request);
         }
 

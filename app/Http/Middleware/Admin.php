@@ -17,7 +17,8 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user() &&  Auth::user()->type == User::ADMIN ) {
+        // &&  Auth::user()->type == User::ADMIN
+        if (Auth::user() ) {
             return $next($request);
         }
 
