@@ -10,7 +10,6 @@
     @endforeach
 </div>
 <style>
-
 .nopad {
 	padding-left: 0 !important;
 	padding-right: 0 !important;
@@ -44,25 +43,37 @@
   display: block !important;
 }
 </style>
-
 <script>
 // image gallery
 // init the state from the input
 $(".image-checkbox").each(function () {
-  if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
-    $(this).addClass('image-checkbox-checked');
-  }
-  else {
-    $(this).removeClass('image-checkbox-checked');
-  }
-});
-
-// sync the state to the input
-$(".image-checkbox").on("click", function (e) {
-  $(this).toggleClass('image-checkbox-checked');
-  var $checkbox = $(this).find('input[type="checkbox"]');
-  $checkbox.prop("checked",!$checkbox.prop("checked"))
-
-  e.preventDefault();
-});
+    if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+      $(this).addClass('image-checkbox-checked');
+      removeAllClass();
+    }
+    else {
+      $(this).removeClass('image-checkbox-checked');
+    }
+  });
+  
+  // sync the state to the input
+  $(".image-checkbox").on("click", function (e) {
+    e.preventDefault();
+    $(this).toggleClass('image-checkbox-checked');
+    var $checkbox = $(this).find('input[type="checkbox"]');
+    $checkbox.prop("checked",!$checkbox.prop("checked"))
+    removeAllClass(this);
+  });
+  
+    function removeAllClass(elemant){
+      $(".image-checkbox").each(function () {
+        if ($(this).find('input[type="checkbox"]').first().attr("checked")) {
+          $(this).addClass('image-checkbox-checked');
+        }
+        else {
+          $(this).removeClass('image-checkbox-checked');
+        }
+      });
+      $(elemant).addClass('image-checkbox-checked');
+    }
 </script>

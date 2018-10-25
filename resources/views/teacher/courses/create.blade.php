@@ -75,9 +75,10 @@
                             </div>
                             <div class="form-group">
                                 <a href="#" class="btn btn-block btn-primary" id="albomImge">
-                                    <li class="fa fa-file-image-o fa-2x"> select image form albom</li>
+                                    <li class="fa fa-file-image-o fa-2x" id="li-albomImge" >if do not have image (select image form albom)</li>
                                 </a>
                             </div>
+                            <input type="hidden" name="cover_helper" id="cover_helper">
                             <div class="form-group">
                                     <label for="cover">cover</label>
                                     <input id="cover" type="file" class="form-control" name="cover"  value="{{ old('cover') }}">

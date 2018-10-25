@@ -11,8 +11,20 @@
               </div>
               <div class="modal-footer">
                  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-                 <button type="button" class="btn btn-primary">Save changes</button>
+                 <button type="button" class="btn btn-primary " id="use_image">Used This Image</button>
               </div>
            </div>
         </div>
     </div>
+
+    <script>
+    $("#use_image").click(function (e) { 
+        e.preventDefault();
+        $('#li-albomImge').text('select image coure ');
+        $('#li-albomImge').removeClass('fa-file-image-o');
+        $('#li-albomImge').addClass('fa-fw fa-arrows-alt');
+        var path=$('.image-checkbox-checked >img').attr('src');
+        document.getElementById("cover_helper").value = path;
+        $('#imagemodal').modal('hide'); 
+    });
+    </script>
