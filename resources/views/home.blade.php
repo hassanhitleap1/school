@@ -131,7 +131,7 @@
                                   </div>
                                   <div class="col-left__item"><span class="courses__content__icon"><span class="glyph-icon flaticon-profile-1 icon-custom"></span></span><span class="courses__content__number">347</span></div>
                                 </div>
-                                <div class="courses__col-right courses__content__price">$100</div>
+                                <div class="courses__col-right courses__content__price">${{$coure->price}}</div>
                               </div>
                             </div>
                           </div>
