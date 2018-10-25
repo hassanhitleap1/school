@@ -31,6 +31,9 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Description</th>
+                                <th>Price</th>
+                                <th>material</th>
+                                <th>level</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -38,7 +41,11 @@
                              @foreach($courses as $course)
                                 <tr>
                                     <td>{{$course->name}}</td>
-                                    <td>{{$course->description}}</td>
+                                    <td><?=$course->description?></td>
+                                    <td>{{$course->price}}</td>
+                                    <td>{{$course->material->name_en}}</td>
+                                    <td>{{$course->level->name_en}}</td>
+                                    
                                     <td>
                                         <form id="trash-form" action="{{url('/teacher/courses/'.$course->id)}}" method="POST">
                                             <a><i class="fa fa-fw fa-trash"  onclick="event.preventDefault();document.getElementById('trash-form').submit();"></i>Delete

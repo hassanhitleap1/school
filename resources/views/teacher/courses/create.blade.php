@@ -46,8 +46,32 @@
                                 <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="{{ old('name') }}">
                             </div>
                             <div class="form-group">
+                                <label for="material_id">material</label>
+                                <select class="form-control" id="material_id" name="material_id">
+                                    <option selected disabled>please select</option>
+                                    @foreach ($materials as $material)
+                                        <option value="{{$material->id}}" >{{$material->name_en}}</option>
+                                    @endforeach
+                                    
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="level_id">level</label>
+                                <select class="form-control" id="level_id" name="level_id">
+                                    <option selected disabled>please select</option>
+                                    @foreach ($levels as $level)
+                                        <option value="{{$level->id}}" >{{$level->name_en}}</option>
+                                    @endforeach
+                                    
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="description">Description</label>
-                                <input type="text" class="form-control" id="description" placeholder="Description" name="description" value="{{ old('description') }}">
+                                <textarea class="form-control" placeholder="Place Description here"  name="description" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ old('description') }}</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <input type="text" class="form-control" id="price" placeholder="Price" name="price" value="{{ old('price') }}">
                             </div>
                             <div class="form-group">
                                 <a href="#" class="btn btn-block btn-primary" id="albomImge">

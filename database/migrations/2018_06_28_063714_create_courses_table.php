@@ -17,8 +17,10 @@ class CreateCoursesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
+            $table->double('price');
             $table->integer('teacher_id')->unsigned();
             $table->integer('level_id')->unsigned();
+            $table->integer('material_id')->unsigned();
             $table->double('time');
             $table->string('cover_path')->nullable();
             $table->timestamps();

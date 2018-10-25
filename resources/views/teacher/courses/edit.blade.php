@@ -47,8 +47,37 @@
                                 <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="{{$course->name}}">
                             </div>
                             <div class="form-group">
+                                <label for="level_id">level</label>
+                                <select class="form-control" id="level_id" name="level_id">
+                                    @foreach ($levels as $level)
+                                        @if( $course->level_id==$category->id)
+                                            <option value="{{$level->id}}" selected>{{$level->name_en}}</option>
+                                         @else
+                                            <option value="{{$level->id}}" >{{$level->name_en}}</option>
+                                         @endif
+                                    @endforeach
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="level_id">material</label>
+                            <select class="form-control" id="material_id" name="material_id">
+                                @foreach ($materials as $material)
+                                    @if( $course->material_id==$material->id)
+                                        <option value="{{$material->id}}" selected>{{$material->name_en}}</option>
+                                     @else
+                                        <option value="{{$material->id}}" >{{$material->name_en}}</option>
+                                     @endif
+                                        @endforeach
+                                    </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="description">Description</label>
-                                <input type="text" class="form-control" id="description" placeholder="description" name="description" value="{{$course->description}}">
+                                <textarea class="form-control" placeholder="Place Description here"  name="description" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{$course->description}}</textarea>
+                             
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <input type="text" class="form-control" id="price" placeholder="Price" name="price" value="{{ $course->price) }}">
                             </div>
                             <div class="form-group">
                                 @if (!$course->cover_path == null)

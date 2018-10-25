@@ -22,4 +22,12 @@ class Courses extends Model
     {
         return $this->hasMany(CorseLike::class, 'course_id', 'id');
     }
+
+    public function material(){
+        return $this->belongsTo(Material::class,'material_id','id');
+    }
+
+    public function level(){
+        return $this->belongsTo(Level::class,'level_id','id');
+    }
 }

@@ -48,7 +48,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="description">Description</label>
-                                <input type="text" class="form-control" id="description" placeholder="Description" name="description" value="{{ old('description') }}">
+                                <textarea class="form-control" placeholder="Place Description here"  name="description" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ old('description') }}</textarea>
+                             
                             </div>
                         </div>
                         <!-- /.box-body -->

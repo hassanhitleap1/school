@@ -8,6 +8,8 @@ use App\Model\Courses;
 use Illuminate\Support\Facades\Auth;
 use File;
 use Illuminate\Support\Facades\Storage;
+use App\Model\Material;
+use App\Model\Level;
 class CoursesController extends Controller
 {
     /**
@@ -28,7 +30,11 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        return view('teacher.courses.create');
+        $materials=Material::all();
+        $levels=Level::all();
+        return view('teacher.courses.create')
+        ->with('materials',$materials)
+        ->with('levels',$levels);
     }
 
     /**
@@ -42,6 +48,9 @@ class CoursesController extends Controller
         $rules=[
             'name'=>'required',
             'description'=>'required',
+            'price'=>'numeric|required',
+            'level_id'=>'required',
+            'material_id'=>'required',
             'cover'=>'image',
         ];
         $this->validate($request,$rules);
@@ -65,7 +74,9 @@ class CoursesController extends Controller
 
         $model->name=$request->name;
         $model->description=$request->description;
-        $model->level_id=1;
+        $model->level_id=$request->level_id;
+        $model->material_id=$request->material_id;
+        $model->price=$request->price;
         $model->teacher_id=Auth::user()->id;
         $model->time=1.5;
         $model->save();
@@ -91,7 +102,11 @@ class CoursesController extends Controller
      */
     public function edit(Courses $course)
     {
-        return view('teacher.courses.edit')->with('course',$course);
+        $materials=Material::all();
+        $levels=Level::all();
+        return view('teacher.courses.edit')->with('course',$course)
+        ->with('materials',$materials)
+        ->with('levels',$levels);
     }
 
     /**
@@ -125,7 +140,9 @@ class CoursesController extends Controller
         }
         $course->name=$request->name;
         $course->description=$request->description;
-        $course->level_id=1;
+        $course->price=$request->price;
+        $course->level_id=$request->level_id;
+        $course->material_id=$request->material_id;
         $course->time=1.5;
         $course->save();
         return redirect('/teacher/courses');

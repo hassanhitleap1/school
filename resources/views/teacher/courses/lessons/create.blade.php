@@ -49,11 +49,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="description">Description</label>
-                                <input type="text" class="form-control" id="description" placeholder="Description" name="description" value="{{ old('description') }}">
+                                <textarea class="form-control" placeholder="Place Description here"  name="description" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ old('description') }}</textarea>
+                             
                             </div>
                             <div class="form-group">
-                                <label for="description">content</label>
-                                <input type="text" class="form-control" id="content" placeholder="content" name="content" value="{{ old('content') }}">
+                                <label for="description">Content</label>
+                                <textarea class="textarea" placeholder="Place Description here"  name="content" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ old('description') }}</textarea>
+                             
                             </div>
                             <div class="form-group">
                                 <label for="file">vedio</label>
