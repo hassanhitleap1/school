@@ -95,16 +95,6 @@
             </div>
         </div>
               @include('teacher.courses.model')
-            <script>
-                $(function() {
-            
-                        $("#albomImge").click(function (e) { 
-                            e.preventDefault();
-                            $( ".modal-body" ).load( "load-albom" , function() {
-                                $('#imagemodal').modal('show');   
-                            });
-                        });   
-                });
-             </script>
+              <script src="{{asset('js/model.js')}}"></script>
     </section>
 @endsection

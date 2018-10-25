@@ -50,7 +50,7 @@
                                 <label for="level_id">level</label>
                                 <select class="form-control" id="level_id" name="level_id">
                                     @foreach ($levels as $level)
-                                        @if( $course->level_id==$category->id)
+                                        @if( $course->level_id==$level->id)
                                             <option value="{{$level->id}}" selected>{{$level->name_en}}</option>
                                          @else
                                             <option value="{{$level->id}}" >{{$level->name_en}}</option>
@@ -77,7 +77,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="price">Price</label>
-                                <input type="text" class="form-control" id="price" placeholder="Price" name="price" value="{{ $course->price) }}">
+                                <input type="text" class="form-control" id="price" placeholder="Price" name="price" value="{{ $course->price }}">
                             </div>
                             <div class="form-group">
                                 @if (!$course->cover_path == null)
@@ -86,6 +86,12 @@
                                         <a class="btn  btn-lg" href="{{url('/teacher/courses/'.$course->id.'/delete-cover')}}"><li class="fa fa-fw fa-trash"></li>delete</a>
                                 </div>
                                 @endif
+                                <div class="form-group">
+                                        <a href="#" class="btn btn-block btn-primary" id="albomImge">
+                                            <li class="fa fa-file-image-o fa-2x" id="li-albomImge" >if do not have image (select image form albom)</li>
+                                        </a>
+                                    </div>
+                                    <input type="hidden" name="cover_helper" id="cover_helper">
 
                                     <label for="cover">cover</label>
                                     <input id="cover" type="file" class="form-control" name="cover"  value="{{ old('cover') }}">
@@ -101,6 +107,8 @@
                 <!-- /.box -->
             </div>
         </div>
+        @include('teacher.courses.model')
+        <script src="{{asset('js/model.js')}}"></script>
     </section>
 
 

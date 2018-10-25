@@ -70,6 +70,8 @@ class CoursesController extends Controller
                     var_dump($e->getMessage()) ;
                 }
             } 
+        }else{
+            $model->cover_path=$request->cover_helper;
         }
 
         $model->name=$request->name;
@@ -137,6 +139,8 @@ class CoursesController extends Controller
                     var_dump($e->getMessage()) ;
                 }
             } 
+        }else{
+            $course->cover_path=$request->cover_helper;
         }
         $course->name=$request->name;
         $course->description=$request->description;
