@@ -88,3 +88,5 @@ Route::group(['prefix' => '/teacher','middleware' => ['teacher']], function () {
 Route::get('/like-course','ActionStudent@likeCourse');
 
 Route::resource('/course','CourseController');
+
+Route::resource('/profile','ProfileController');

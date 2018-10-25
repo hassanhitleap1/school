@@ -97,7 +97,7 @@
                 <div class="nav-right__profile"><i class="glyph-icon flaticon-profile-2 nav-right__profile__icon"></i><span class="nav-right__profile__status"></span>
                   <div class="profile">
                     <div class="profile__avarta"><img class="profile__image" src="{{asset('educef/assets/img/30w.jpg')}}" alt=""></div>
-                    <a class="profile__user-name" href="#">{{\Auth::user()->name}}</a><a class="profile__course" href="#"><i class="glyph-icon flaticon-profile profile__icon"></i><span class="profile__text">My profile</span></a><a class="profile__course" href="#"><i class="glyph-icon flaticon-shield profile__icon"></i><span class="profile__text">My course</span></a>
+                    <a class="profile__user-name" href="#">{{\Auth::user()->name}}</a><a class="profile__course" href="{{url('/profile')}}"><i class="glyph-icon flaticon-profile profile__icon"></i><span class="profile__text">My profile</span></a><a class="profile__course" href="#"><i class="glyph-icon flaticon-shield profile__icon"></i><span class="profile__text">My course</span></a>
                     <a class="btn btn-default button-default profile__btn"  href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log out</a>
                   </div>
                 </div>
