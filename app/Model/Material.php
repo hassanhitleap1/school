@@ -8,6 +8,6 @@ class Material extends Model
 {
     //
     public function courses(){
-        return $this->hasMany(Courses::class,'id','matireial_id');
+        return $this->hasMany(Courses::class,'material_id','id');
     }
 }

@@ -47,20 +47,12 @@
                 <div class="header-filter__title">active filters</div>
                 <div class="header-filter__result">Result:<span class="header-filter__number">{{$coures->count()}} coure</span></div>
               </div>
-              <div class="tags">
-                <div class="tags__item"><span class="btn-outline">default</span></div>
-                <div class="tags__item"><i class="glyph-icon flaticon-circle tags__icon"></i><span class="tags__text">default</span></div>
-                <div class="tags__item"><i class="glyph-icon flaticon-circle tags__icon"></i><span class="tags__text">default</span></div>
-                <div class="tags__item"><i class="glyph-icon flaticon-circle tags__icon"></i><span class="tags__text">default</span></div>
-              </div>
               <div class="tabs">
                 <ul class="tabs__list">
                   <li class="tabs__item"><a class="tabs__link active" href="#">All</a></li>
-                  <li class="tabs__item"><a class="tabs__link" href="#">Paid</a></li>
                   <li class="tabs__item"><a class="tabs__link" href="#">Sale</a></li>
                   <li class="tabs__item"><a class="tabs__link" href="#">Free</a></li>
-                  <li class="tabs__item"><a class="tabs__link" href="#">Bundle</a></li>
-                  <li class="tabs__item"><a class="tabs__link" href="#">Course</a></li>
+
                 </ul>
                 <div class="sort-right">
                   <div class="sort-by"><span class="sort-by__text">Sort by:</span>
@@ -71,8 +63,6 @@
                                       <li class="list-sort__item"><a class="list-sort__link ">name</a>
                                       </li>
                                       <li class="list-sort__item"><a class="list-sort__link ">date up</a>
-                                      </li>
-                                      <li class="list-sort__item"><a class="list-sort__link ">newest</a>
                                       </li>
                                     </ul>
                       </div>
@@ -91,21 +81,38 @@
                                       <div class="courses__top__bundle">bundle</div>
                                       <div class="courses__top__bt-seller">best seller</div>
                                       <div class="courses__hover">
-                                        <div class="courses__hover-content"><span class="courses__hover-content__item"><span class="glyph-icon flaticon-shapes courses__hover-content__icon"></span></span><span class="courses__hover-content__item"><span class="glyph-icon flaticon-interface courses__hover-content__icon"></span></span></div>
+                                        <div class="courses__hover-content">
+                                          <span class="courses__hover-content__item">
+                                            <span class="glyph-icon flaticon-shapes courses__hover-content__icon">
+                                              </span></span><span class="courses__hover-content__item">
+                                                <span class="glyph-icon flaticon-interface courses__hover-content__icon">
+                                                  </span>
+                                                </span>
+                                              </div>
                                       </div>
                                     </div>
-                                    <div class="col-equal courses__content"><a class="courses__content__title" href="#">neutal networks and for deep learning</a>
-                                      <div class="courses__content__author"><a class="courses__col-left" href="#"><span class="courses__content__avatar"><img class="courses__content__image" src="assets/img/partner/partner-details-0.png" alt=""></span><span class="courses__content__author-name">Anthony Leath</span></a>
+                                    <div class="col-equal courses__content">
+                                      <a class="courses__content__title" href="{{url('/course/'.$course->id)}}">{{$course->name}}</a>
+                                      <div class="courses__content__author"><a class="courses__col-left" href="{{url('/course/'.$course->id)}}">
+                                        <span class="courses__content__avatar">
+                                          <img class="courses__content__image" src="{{asset('educef/assets/img/partner/partner-details-0.png')}}" alt="">
+                                        </span><span class="courses__content__author-name">{{$course->teacher->name}}</span></a>
                                         <div class="courses__col-right">
                                           <div class="rating-start" data-rating="5"></div>
                                         </div>
                                       </div>
                                       <div class="courses__content__info">
                                         <div class="courses__col-left">
-                                          <div class="col-left__item"><span class="courses__content__icon"><span class="glyph-icon flaticon-shapes icon-custom"></span></span><span class="courses__content__number">347</span></div>
+                                          <div class="col-left__item">
+                                            <span class="courses__content__icon">
+                                              <span class="glyph-icon flaticon-shapes icon-custom">
+                                                </span>
+                                              </span>
+                                              <span class="courses__content__number">{{$course->likes->count()}}</span>
+                                            </div>
                                           <div class="col-left__item"><span class="courses__content__icon"><span class="glyph-icon flaticon-profile-1 icon-custom"></span></span><span class="courses__content__number">347</span></div>
                                         </div>
-                                        <div class="courses__col-right courses__content__price">$100</div>
+                                        <div class="courses__col-right courses__content__price">${{$course->price}}</div>
                                       </div>
                                     </div>
                                   </div>
