@@ -16,7 +16,7 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $teachers = Teacher::all();
+        $teachers = Teacher::where('type', User::TEACHER)->get();
         return view('admin.teachers.index')->withTeachers($teachers);
      }
 

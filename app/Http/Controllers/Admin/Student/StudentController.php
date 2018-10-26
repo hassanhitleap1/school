@@ -16,7 +16,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = Student::all();
+        $students = Student::where('type',User::STUDENT)->get();
         return view('admin.students.index')->withStudents($students);
      }
 

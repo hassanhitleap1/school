@@ -17,7 +17,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $admins = Admin::all();
+        $admins = Admin::where('type', User::ADMIN)->get();
         return view('admin.admins.index')->withAdmins($admins);
      }
 
