@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
                 'created_at'=>date('Y-m-d H:m:s'),
         ]);
         DB::table('users')->insert([
-                'name' => 'admin',
+                'name' => 'teacher',
                 'email' =>'teacher@teacher.com',
                 'password' => bcrypt('teacher'),
                 'block' => User::UNBLOCK,
