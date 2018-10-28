@@ -3,6 +3,7 @@
 @section('content')
 <div class="courseListing">
         <div class="container">
+        <form action="{{url('courses')}}" method="GET">
           <div class="row">
               <div class="col-lg-3 col-md-3 column-left">
                   <div class="column-left__item">
@@ -38,8 +39,9 @@
                                     </ul><a class="column-left__link" href="#">see more</a>
                       </div>
                     </div>
-                  </div>
-        </div>
+              </div>
+              </form>
+          </div>
             <div class="col-lg-9 col-md-9 column-right">
               <div class="header-filter">
                 <div class="header-filter__title">active filters</div>
