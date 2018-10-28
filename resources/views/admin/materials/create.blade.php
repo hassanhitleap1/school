@@ -49,6 +49,16 @@
                                 <label for="name_ar">Name in Arabic</label>
                                 <input type="text" class="form-control" id="name_ar" placeholder="Name in Arabic" name="name_ar" value="{{ old('name_ar') }}">
                             </div>
+                            <div class="form-group">
+                                    <label for="level_id">level</label>
+                                    <select class="form-control" id="level_id" name="level_id">
+                                        <option selected disabled>please select</option>
+                                        @foreach ($levels as $level)
+                                            <option value="{{$level->id}}" >{{$level->name_en}}</option>
+                                        @endforeach
+                                        
+                                    </select>
+                            </div>
                         </div>
                         <!-- /.box-body -->
 

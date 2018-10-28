@@ -3,82 +3,23 @@
       <div class="container">
         <nav class="navbar navbar-inverse header-top__top">
           <div class="navbar-header"><a class="navbar-brand logo__link" href="http://swlabs.co/"><img class="logo__image" src="{{asset('educef/assets/img/logo/Logo-header.png')}}" alt="Logo Educef"></a></div>
-          <div class="nav navbar-nav navbar-left categories"><a class="dropdown-toggle categories__button"><i class="glyph-icon flaticon-signs-1 categories__icon"></i><span class="categories__text">subject</span></a>
+          <div class="nav navbar-nav navbar-left categories"><a class="dropdown-toggle categories__button"><i class="glyph-icon flaticon-signs-1 categories__icon"></i><span class="categories__text">Class</span></a>
             <div class="dropdown-catagories">
                   <ul class="dropdown-catagories__list ">
-                    <?php  $categories= \App\Model\Category::all();  ?>
-                    @foreach($categories as $category)
-                      <li class="dropdown-catagories__item"><a class="dropdown-catagories__link " href="#">{{$category->name_en}}</a><span class="glyph-icon flaticon-arrows-3 dropdown-catagories__icon"></span>
-                      <div class="cate-sub">
-                        <ul class="cate-sub__list">
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Finance</a></li>
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Industry</a></li>
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Management</a></li>
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Media</a></li>
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Sales</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    @endforeach
-
-                    <li class="dropdown-catagories__item"><a class="dropdown-catagories__link " href="#">Design</a><span class="glyph-icon flaticon-arrows-3 dropdown-catagories__icon"></span>
-                      <div class="cate-sub">
-                        <ul class="cate-sub__list">
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Design Thinking</a></li>
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Fashion</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="dropdown-catagories__item"><a class="dropdown-catagories__link " href="#">Development</a><span class="glyph-icon flaticon-arrows-3 dropdown-catagories__icon"></span>
-                      <div class="cate-sub">
-                        <ul class="cate-sub__list">
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Databases</a></li>
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Mobie Apps</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="dropdown-catagories__item"><a class="dropdown-catagories__link " href="#">Heath &amp; Fitness</a><span class="glyph-icon flaticon-arrows-3 dropdown-catagories__icon"></span>
-                      <div class="cate-sub">
-                        <ul class="cate-sub__list">
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Dance</a></li>
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Fitness</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="dropdown-catagories__item"><a class="dropdown-catagories__link " href="#">IT &amp; Software</a><span class="glyph-icon flaticon-arrows-3 dropdown-catagories__icon"></span>
-                      <div class="cate-sub">
-                        <ul class="cate-sub__list">
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">AI &amp; Big Data</a></li>
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Hardware</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="dropdown-catagories__item"><a class="dropdown-catagories__link " href="#">Language</a><span class="glyph-icon flaticon-arrows-3 dropdown-catagories__icon"></span>
-                      <div class="cate-sub">
-                        <ul class="cate-sub__list">
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Chinese</a></li>
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">English</a></li>
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">French</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="dropdown-catagories__item"><a class="dropdown-catagories__link " href="#">Lifestyle</a><span class="glyph-icon flaticon-arrows-3 dropdown-catagories__icon"></span>
-                      <div class="cate-sub">
-                        <ul class="cate-sub__list">
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Art &amp; Crafts</a></li>
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Gaming</a></li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="dropdown-catagories__item"><a class="dropdown-catagories__link " href="#">Office Productivity</a><span class="glyph-icon flaticon-arrows-3 dropdown-catagories__icon"></span>
-                      <div class="cate-sub">
-                        <ul class="cate-sub__list">
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Apple</a></li>
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Google</a></li>
-                          <li class="cate-sub__item"><a class="cate-sub__link" href="#">Oracle</a></li>
-                        </ul>
-                      </div>
-                    </li>
+                    <?php $levels= \App\Model\Level::all()?>
+                      @foreach ($levels as $level)
+                        <li class="dropdown-catagories__item"><a class="dropdown-catagories__link " href="#">{{$level->name_en}}</a><span class="glyph-icon flaticon-arrows-3 dropdown-catagories__icon"></span>
+                            @if (count($level->materials))
+                            <div class="cate-sub">
+                                <ul class="cate-sub__list">
+                                  @foreach ($level->materials as $material)
+                                      <li class="cate-sub__item"><a class="cate-sub__link" href="#">{{$material->name_en}}</a></li>
+                                  @endforeach
+                                </ul>
+                              </div>
+                            @endif
+                        </li>
+                      @endforeach
                   </ul>
             </div>
           </div>

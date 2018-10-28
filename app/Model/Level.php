@@ -25,4 +25,8 @@ class Level extends Model
     public function courses(){
         return $this->hasMany(Courses::class,'level_id','id');
     }
+
+    public function materials(){
+        return $this->hasMany(Material::class,'level_id','id');
+    }
 }
