@@ -15,7 +15,7 @@
                                     <div class="ckeckbox">
                                       <input class="select__checkmark" type="checkbox" id="topics-Courses_{{$level->id}}" value="Courses_{{$level->id}}" name="levels">
                                        <label for="topics-Courses_{{$level->id}}">Courses</label>
-                                        </div><span class="select__number">125</span>
+                                        </div><span class="select__number">{{$level->courses->count()}}</span>
                                   </li>
                                @endforeach
                             </ul><a class="column-left__link" href="#">see more</a>
@@ -32,7 +32,7 @@
                                         <div class="ckeckbox">
                                           <input class="select__checkmark" type="checkbox" id="materials-Courses_{{$material->id}}" value="Courses_{{$material->id}}" name="materials">
                                           <label for="materials-Courses_{{$material->id}}">Courses</label>
-                                        </div><span class="select__number">125</span>
+                                        </div><span class="select__number">{{$material->courses->count()}}</span>
                                       </li>
                                     @endforeach
                                     </ul><a class="column-left__link" href="#">see more</a>
