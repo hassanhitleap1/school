@@ -31,6 +31,7 @@
                             <tr>
                                 <th>Name in Arabic</th>
                                 <th>Name in English</th>
+                                <th>Level Name</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -39,6 +40,7 @@
                                 <tr>
                                     <td>{{$material->name_en}}</td>
                                     <td>{{$material->name_ar}}</td>
+                                    <td>{{$material->level->name_en}}</td>
                                     <td>
                                         <form id="trash-form" action="{{url('/admin/materials/'.$material->id)}}" method="POST">
                                             <a><i class="fa fa-fw fa-trash"  onclick="event.preventDefault();document.getElementById('trash-form').submit();"></i>Delete

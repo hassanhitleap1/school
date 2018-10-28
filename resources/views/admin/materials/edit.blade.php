@@ -50,6 +50,19 @@
                                 <label for="name_ar">Name in Arabic</label>
                                 <input type="text" class="form-control" id="name_ar" placeholder="Name in Arabic" name="name_ar" value="{{$material->name_ar}}">
                             </div>
+                            <div class="form-group">
+                                    <label for="level_id">level</label>
+                                    <select class="form-control" id="level_id" name="level_id">
+                                        @foreach ($levels as $level)
+                                            @if( $material->level_id==$level->id)
+                                                <option value="{{$level->id}}" selected>{{$level->name_en}}</option>
+                                             @else
+                                                <option value="{{$level->id}}" >{{$level->name_en}}</option>
+                                             @endif
+                                        @endforeach
+                                        
+                                    </select>
+                            </div>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">

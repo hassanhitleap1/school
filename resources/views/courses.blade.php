@@ -4,44 +4,32 @@
 <div class="courseListing">
         <div class="container">
           <div class="row">
-            <div class="col-lg-3 col-md-3 column-left">
-                <div class="column-left__item">
-                    <h1 class="column-left__title">materials</h1>
-                    <div class="select list-selector"><a class="column-left__button-drop" href="#topics" data-toggle="collapse" id="btn-topics"><span class="column-left__button-drop__text">topics</span><span class="glyph-icon flaticon-arrows-2 column-left__icon"></span></a>
-                      <div class="list-catagories topics" id="topics">
-                                    <ul class="select__list">
+              <div class="col-lg-3 col-md-3 column-left">
 
-                                      @foreach ($levels as $level)
+                  <div class="column-left__item">
+                    <h1 class="column-left__title">levels</h1>
+                    <div class="select list-selector"><a class="column-left__button-drop" href="#topics" data-toggle="collapse" id="btn-topics"><span class="column-left__button-drop__text">levels</span><span class="glyph-icon flaticon-arrows-2 column-left__icon"></span></a>
+                      <div class="list-catagories topics" id="levels">
+                                    <ul class="select__list">
                                       <li class="select__item">
-                                          <div class="">
-                                            <input class="select__checkmark" type="checkbox" name="{{$level->name_en}}" >
-                                            <label >{{$level->name_en}}</label>
-                                          </div><span class="select__number">{{$level->courses->count()}}</span>
-                                        </li>
-                                      @endforeach
+                                        <div class="ckeckbox">
+                                          <input class="select__checkmark" type="checkbox" id="topics-Courses" value="Courses" name="levels">
+                                          <label for="topics-Courses">Courses</label>
+                                        </div><span class="select__number">125</span>
+                                      </li>
+                                      <li class="select__item">
+                                        <div class="ckeckbox">
+                                          <input class="select__checkmark" type="checkbox" id="topics-Design" value="Design" name="levels">
+                                          <label for="topics-Design">Design</label>
+                                        </div><span class="select__number">246</span>
+                                      </li>
+                           
                                     </ul><a class="column-left__link" href="#">see more</a>
                       </div>
                     </div>
                   </div>
-                          <div class="column-left__item">
-                            <h1 class="column-left__title">materials</h1>
-                            <div class="select list-selector"><a class="column-left__button-drop" href="#topics" data-toggle="collapse" id="btn-topics"><span class="column-left__button-drop__text">topics</span><span class="glyph-icon flaticon-arrows-2 column-left__icon"></span></a>
-                              <div class="list-catagories topics" id="topics">
-                                            <ul class="select__list">
-
-                                              @foreach ($materials as $material)
-                                              <li class="select__item">
-                                                  <div class="ckeckbox">
-                                                    <input class="select__checkmark" type="checkbox" id="topics-Courses" value="Courses" name="topics">
-                                                    <label for="topics-Courses">{{$material->name_en}}</label>
-                                                  </div><span class="select__number">{{$material->courses->count()}}</span>
-                                                </li>
-                                              @endforeach
-                                            </ul><a class="column-left__link" href="#">see more</a>
-                              </div>
-                            </div>
-                          </div>
-            </div>
+                  
+    </div>
             <div class="col-lg-9 col-md-9 column-right">
               <div class="header-filter">
                 <div class="header-filter__title">active filters</div>

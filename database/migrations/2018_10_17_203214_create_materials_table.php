@@ -17,6 +17,7 @@ class CreateMaterialsTable extends Migration
             $table->increments('id');
             $table->string('name_en');
             $table->string('name_ar');
+            $table->smallInteger('level_id');
             $table->timestamps();
         });
     }

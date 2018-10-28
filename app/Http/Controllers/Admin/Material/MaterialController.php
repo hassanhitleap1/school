@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Material;
 use App\Model\Material;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Level;
 
 class MaterialController extends Controller
 {
@@ -26,7 +27,8 @@ class MaterialController extends Controller
      */
     public function create()
     {
-        return view('admin.materials.create');
+        $levels=Level::all();
+        return view('admin.materials.create')->withLevels($levels);
     }
 
     /**
@@ -40,12 +42,14 @@ class MaterialController extends Controller
         $rules = [
             'name_en' => 'required',
             'name_ar' => 'required',
+            'level_id'=>'required|numeric',
         ];
 
         $this->validate($request, $rules);
         $modelMaterial = new Material;
         $modelMaterial->name_en = $request->name_en;
         $modelMaterial->name_ar = $request->name_ar;
+        $modelMaterial->level_id = $request->level_id;
         $modelMaterial->save();
         return redirect('/admin/materials');
     }
@@ -69,7 +73,8 @@ class MaterialController extends Controller
      */
     public function edit(Material $material)
     {
-        return view('admin.materials.edit')->with('material', $material);
+        $levels=Level::all();
+        return view('admin.materials.edit')->with('material', $material)->withLevels($levels);
     }
 
     /**
@@ -83,6 +88,7 @@ class MaterialController extends Controller
     {
         $material->name_en = $request->name_en;
         $material->name_ar = $request->name_ar;
+        $material->level_id = $request->level_id;
         $material->save();
         return redirect('/admin/materials');
     }
