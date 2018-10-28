@@ -13,9 +13,9 @@
 
                                       @foreach ($levels as $level)
                                       <li class="select__item">
-                                          <div class="ckeckbox">
-                                            <input class="select__checkmark" type="checkbox" id="topics-Courses" value="Courses" name="topics">
-                                            <label for="topics-Courses">{{$level->name_en}}</label>
+                                          <div class="">
+                                            <input class="select__checkmark" type="checkbox" name="{{$level->name_en}}" >
+                                            <label >{{$level->name_en}}</label>
                                           </div><span class="select__number">{{$level->courses->count()}}</span>
                                         </li>
                                       @endforeach
