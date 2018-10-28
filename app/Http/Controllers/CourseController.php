@@ -13,7 +13,8 @@ class CourseController extends Controller
     /**
      * index  course
     */
-    public function index(){
+    public function index(Request $request){
+        var_dump($request->levels);
         $coures= Courses::paginate(21);
         $materials=Material::all();
         $levels=Level::all();

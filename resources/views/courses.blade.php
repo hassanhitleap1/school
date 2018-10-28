@@ -3,7 +3,7 @@
 @section('content')
 <div class="courseListing">
         <div class="container">
-        <form action="{{url('courses')}}" method="GET">
+        <form action="{{url('course')}}" method="GET">
           <div class="row">
               <div class="col-lg-3 col-md-3 column-left">
                   <div class="column-left__item">
@@ -14,8 +14,8 @@
                               @foreach($levels as $level)
                                  <li class="select__item">
                                     <div class="ckeckbox">
-                                      <input class="select__checkmark" type="checkbox" id="topics-Courses_{{$level->id}}" value="Courses_{{$level->id}}" name="levels">
-                                       <label for="topics-Courses_{{$level->id}}">Courses</label>
+                                      <input class="select__checkmark" type="checkbox" id="level_{{$level->id}}" value="{{$level->id}}" name="levels[]" <?=(isset($_GET['levels']) and in_array($level->id,$_GET['levels'] ))?'checked':'false'?>>
+                                       <label for="level_{{$level->id}}">Courses</label>
                                         </div><span class="select__number">{{$level->courses->count()}}</span>
                                   </li>
                                @endforeach
@@ -31,8 +31,8 @@
                                     @foreach($materials as $material)
                                       <li class="select__item">
                                         <div class="ckeckbox">
-                                          <input class="select__checkmark" type="checkbox" id="materials-Courses_{{$material->id}}" value="Courses_{{$material->id}}" name="materials">
-                                          <label for="materials-Courses_{{$material->id}}">Courses</label>
+                                          <input class="select__checkmark" type="checkbox" id="material_{{$material->id}}" value="{{$material->id}}" name="materials[]" <?= (isset($_GET['materials']) and in_array($material->id, $_GET['materials'])) ? 'checked' : 'false' ?>>
+                                          <label for="material_{{$material->id}}">Courses</label>
                                         </div><span class="select__number">{{$material->courses->count()}}</span>
                                       </li>
                                     @endforeach
@@ -40,6 +40,7 @@
                       </div>
                     </div>
               </div>
+              <button>action</button>
               </form>
           </div>
             <div class="col-lg-9 col-md-9 column-right">
