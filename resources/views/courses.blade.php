@@ -41,7 +41,6 @@
                     </div>
               </div>
               <button>action</button>
-              </form>
           </div>
             <div class="col-lg-9 col-md-9 column-right">
               <div class="header-filter">
@@ -122,6 +121,7 @@
                             </div>
               </div>
             
+              </form>
               <div class="pagination-wrapper">
                             <nav aria-label="Page navigation example">
                               {{-- <ul class="pagination pagination__list">
