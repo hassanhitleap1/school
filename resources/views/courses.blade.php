@@ -7,40 +7,23 @@
               <div class="col-lg-3 col-md-3 column-left">
 
                   <div class="column-left__item">
-                    <h1 class="column-left__title">topics</h1>
-                    <div class="select list-selector"><a class="column-left__button-drop" href="#topics" data-toggle="collapse" id="btn-topics"><span class="column-left__button-drop__text">topics</span><span class="glyph-icon flaticon-arrows-2 column-left__icon"></span></a>
-                      <div class="list-catagories topics" id="topics">
+                    <h1 class="column-left__title">levels</h1>
+                    <div class="select list-selector"><a class="column-left__button-drop" href="#topics" data-toggle="collapse" id="btn-topics"><span class="column-left__button-drop__text">levels</span><span class="glyph-icon flaticon-arrows-2 column-left__icon"></span></a>
+                      <div class="list-catagories topics" id="levels">
                                     <ul class="select__list">
                                       <li class="select__item">
                                         <div class="ckeckbox">
-                                          <input class="select__checkmark" type="checkbox" id="topics-Courses" value="Courses" name="topics">
+                                          <input class="select__checkmark" type="checkbox" id="topics-Courses" value="Courses" name="levels">
                                           <label for="topics-Courses">Courses</label>
                                         </div><span class="select__number">125</span>
                                       </li>
                                       <li class="select__item">
                                         <div class="ckeckbox">
-                                          <input class="select__checkmark" type="checkbox" id="topics-Design" value="Design" name="topics">
+                                          <input class="select__checkmark" type="checkbox" id="topics-Design" value="Design" name="levels">
                                           <label for="topics-Design">Design</label>
                                         </div><span class="select__number">246</span>
                                       </li>
-                                      <li class="select__item">
-                                        <div class="ckeckbox">
-                                          <input class="select__checkmark" type="checkbox" id="topics-learning" value="learning" name="topics">
-                                          <label for="topics-learning">learning</label>
-                                        </div><span class="select__number">21</span>
-                                      </li>
-                                      <li class="select__item">
-                                        <div class="ckeckbox">
-                                          <input class="select__checkmark" type="checkbox" id="topics-Level" value="Level" name="topics">
-                                          <label for="topics-Level">Level</label>
-                                        </div><span class="select__number">234</span>
-                                      </li>
-                                      <li class="select__item">
-                                        <div class="ckeckbox">
-                                          <input class="select__checkmark" type="checkbox" id="topics-photoshop" value="photoshop" name="topics">
-                                          <label for="topics-photoshop">photoshop</label>
-                                        </div><span class="select__number">48</span>
-                                      </li>
+                           
                                     </ul><a class="column-left__link" href="#">see more</a>
                       </div>
                     </div>
