@@ -27,19 +27,19 @@
                       <div class="select list-selector"><a class="column-left__button-drop" href="#topics" data-toggle="collapse" id="btn-topics"><span class="column-left__button-drop__text">materials</span><span class="glyph-icon flaticon-arrows-2 column-left__icon"></span></a>
                       <div class="list-catagories topics" id="levels">
                           <ul class="select__list">
-                            @foreach($materials as $material)
-                              <li class="select__item">
-                                <div class="ckeckbox">
-                                  <input class="select__checkmark" type="checkbox" id="materials-Courses_{{$material->id}}" value="Courses_{{$material->id}}" name="materials">
-                                   <label for="materials-Courses_{{$material->id}}">Courses</label>
-                                    </div><span class="select__number">125</span>
-                              </li>
-                            @endforeach
-                            </ul><a class="column-left__link" href="#">see more</a>
+                                    @foreach($materials as $material)
+                                      <li class="select__item">
+                                        <div class="ckeckbox">
+                                          <input class="select__checkmark" type="checkbox" id="materials-Courses_{{$material->id}}" value="Courses_{{$material->id}}" name="materials">
+                                          <label for="materials-Courses_{{$material->id}}">Courses</label>
+                                        </div><span class="select__number">125</span>
+                                      </li>
+                                    @endforeach
+                                    </ul><a class="column-left__link" href="#">see more</a>
                       </div>
                     </div>
-              </div>
-        
+                  </div>
+        </div>
             <div class="col-lg-9 col-md-9 column-right">
               <div class="header-filter">
                 <div class="header-filter__title">active filters</div>
@@ -118,6 +118,7 @@
                               @endforeach
                             </div>
               </div>
+            
               <div class="pagination-wrapper">
                             <nav aria-label="Page navigation example">
                               {{-- <ul class="pagination pagination__list">
