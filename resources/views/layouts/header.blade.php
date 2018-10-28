@@ -123,14 +123,7 @@
         <div class="logo--menu"><a class="logo__link" href="http://swlabs.co/"><img class="logo__image" src="{{asset('educef/assets/img/logo/Logo-header.png')}}" alt="Logo Educef"></a></div>
         <nav class="menu-main">
               <ul class="nav navbar-nav menu-main__list ">
-                <li class="menu-main__item active"><a class="menu-main__link " href="#" id="home">home</a>
-                  <div class="dropdown-catagories dropdown-catagories--menu">
-                    <ul class="dropdown-catagories__list">
-                      <li class="dropdown-catagories__item "><a class="dropdown-catagories__link dropdown-catagories__link--full" href="index.html">home 1</a></li>
-                      <li class="dropdown-catagories__item "><a class="dropdown-catagories__link dropdown-catagories__link--full" href="index-2.html">home 2</a></li>
-                    </ul>
-                  </div>
-                </li>
+                <li class="menu-main__item active"><a class="menu-main__link " href="{{url('/')}}" id="home">home</a></li>
                 <li class="menu-main__item ">
                   <a class="menu-main__link " href="{{url('/course')}}" id="course">course</a>
                 </li>

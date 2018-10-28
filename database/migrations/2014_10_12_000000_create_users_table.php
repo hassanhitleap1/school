@@ -21,6 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('type')->default(User::STUDENT);
             $table->integer('level_id')->default(0);
+            $table->integer('phone')->nullable();
+            $table->string('image_path')->nullable();
             $table->enum('block',[\App\User::UNBLOCK, \App\User::BLOCK])->default(\App\User::UNBLOCK); // 0 unblock 1 block
             $table->rememberToken();
             $table->timestamps();
