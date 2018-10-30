@@ -40,36 +40,14 @@
                       </div>
                     </div>
               </div>
-              <button>action</button>
           </div>
             <div class="col-lg-9 col-md-9 column-right">
-              <div class="header-filter">
-                <div class="header-filter__title">active filters</div>
-                <div class="header-filter__result">Result:<span class="header-filter__number">{{$coures->count()}} coure</span></div>
-              </div>
+              <button class="sort-right btn button-normal-02 contact-form__button float-left" type="submit">search</button>
               <div class="tabs">
                 <ul class="tabs__list">
-                  <li class="tabs__item"><a class="tabs__link active" href="#">All</a></li>
-                  <li class="tabs__item"><a class="tabs__link" href="#">Sale</a></li>
-                  <li class="tabs__item"><a class="tabs__link" href="#">Free</a></li>
-
+                  <li class="tabs__item"><a class="tabs__link active" href="{{url('/course?name')}}"></a></li>
                 </ul>
-                <div class="sort-right">
-                  <div class="sort-by"><span class="sort-by__text">Sort by:</span>
-                    <div class="dropdown sort-by__button">
-                      <div class="btn-dropdown" data-toggle="dropdown"><span class="select-sort btn-dropdown__text">None</span><span class="glyph-icon flaticon-arrows-2 btn-dropdown__icon"></span></div>
-                      <div class="list-sort dropdown-menu">
-                                    <ul class="list-sort__list">
-                                      <li class="list-sort__item"><a class="list-sort__link ">name</a>
-                                      </li>
-                                      <li class="list-sort__item"><a class="list-sort__link ">date up</a>
-                                      </li>
-                                    </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="view-gird"><span class="glyph-icon flaticon-signs-1 view-gird__icon" id="view-course-list"></span><span class="glyph-icon flaticon-shapes-2 view-gird__icon" id="view-course-gird"></span></div>
-                </div>
+               
               </div>
               <div class="courses-by-gird">
                             <div class="row courses__list ">
@@ -139,4 +117,4 @@
           </div>
         </div>
       </div>
-@endsectiona
+@endsection
