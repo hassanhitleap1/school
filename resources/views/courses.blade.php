@@ -61,7 +61,7 @@
                                       <div class="courses__hover">
                                         <div class="courses__hover-content">
                                           <span class="courses__hover-content__item">
-                                            <span class="glyph-icon flaticon-shapes courses__hover-content__icon">
+                                            <span class="glyph-icon flaticon-shapes courses__hover-content__icon course_likes" id="{{$course->id}}">
                                               </span></span><span class="courses__hover-content__item">
                                                 <span class="glyph-icon flaticon-interface courses__hover-content__icon">
                                                   </span>

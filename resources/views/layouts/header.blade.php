@@ -133,7 +133,14 @@
       <div class="header-top">
         <div class="container">
           <div class="nav-right--notlogin nav-right--notlogin--mobile pull-right">
-            <div class="nav-right__notifications"><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-shapes nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a><a class="nav-right__item" href="#"><i class="glyph-icon flaticon-commerce-1 nav-right__item__icon"></i><span class="nav-right__item__notification">02</span></a></div>
+            <div class="nav-right__notifications">
+            <a class="nav-right__item" href="{{url('/favorite')}}">
+            <i class="glyph-icon flaticon-shapes nav-right__item__icon"></i>
+            <span class="nav-right__item__notification">02</span></a>
+            <a class="nav-right__item" href="{{url('/favorite')}}">
+            <i class="glyph-icon flaticon-commerce-1 nav-right__item__icon">
+            </i><span class="nav-right__item__notification">02</span></a>
+            </div>
             <button class="form-search__button--mobile" type="submit" data-toggle="collapse" data-target="#form-search-mobile"><i class="glyph-icon flaticon-search form-search__icon"></i></button>
             <button class="button-default nav-right__become" type="submit">become an Instructor</button>
             <div class="nav-right__signin"><a class="nav-right__signin__link" href="#" data-toggle="modal" data-target="#modal-signin" data-modal-target="#sign-in">Sign in</a><span>|</span><a class="nav-right__signin__link" href="#" data-toggle="modal" data-target="#modal-signin" data-modal-target="#sign-up">sign up</a></div>
